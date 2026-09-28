@@ -1,0 +1,28 @@
+sub-counties without a populated 1 km cell (too small for the grid): 0
+  target district               county              subcounty  population  dry_mean_h  worst_month  worst_month_mean_h  dry_share_over_1h  worst_month_share_over_1h  extra_people_over_1h  wet_day_share_over_1h
+hospital   Buikwe   Njeru Municipality         Njeru Division    98037.44        0.85            4                0.89               0.27                       0.36               9544.36                   0.53
+hospital   Mukono  Mukono Municipality          Goma Division   134395.49        1.12            4                1.15               0.47                       0.53               7523.67                   0.56
+hospital   Tororo               Tororo                Osukuru    57640.14        1.41            4                1.55               0.72                       0.84               6765.63                   0.87
+hospital   Wakiso             Kyadondo Kasangati Town Council   235378.42        1.36            4                1.42               0.66                       0.69               6591.73                   0.71
+hospital   Wakiso    Kira Municipality     Namugongo Division   172145.81        1.14            4                1.17               0.67                       0.71               6395.30                   0.71
+hospital   Wakiso    Kira Municipality   Bweyogerere Division   141789.44        0.69            4                0.72               0.16                       0.20               6258.42                   0.31
+hospital   Mayuge                Bunya            Baitambogwe    52990.86        1.20            4                1.30               0.59                       0.70               6116.60                   0.83
+hospital  Mubende Mubende Municipality       Eastern Division    35069.65        1.19           10                1.26               0.58                       0.75               6089.26                   0.97
+hospital    Jinja              Butembe               Mafubira    91804.64        0.62            4                0.65               0.11                       0.18               5999.65                   0.23
+hospital   Wakiso               Busiro                 Wakiso   287273.68        0.94            4                0.98               0.38                       0.40               5448.04                   0.49
+hospital     Arua               Terego                 Manibe    37919.90        1.01           10                1.09               0.56                       0.70               5304.73                   0.80
+hospital   Buikwe   Njeru Municipality        Nyenga Division    60086.06        1.07            4                1.17               0.52                       0.60               4644.91                   0.66
+hospital   Wakiso               Busiro    Katabi Town Council   165169.69        1.04            4                1.07               0.64                       0.66               4637.90                   0.70
+hospital    Yumbe               Aringa                    Apo    59237.90        1.01           10                1.08               0.45                       0.53               4634.03                   0.72
+hospital   Bududa              Manjiya                Nabweya    12874.25        0.90            5                1.00               0.16                       0.52               4609.01                   0.87
+hospital   Tororo West Budama (Kisolo)                Rubongi    48177.51        1.07            4                1.24               0.51                       0.60               4474.00                   0.70
+hospital    Busia          Samia-Bugwe                 Dabani    46442.93        0.72            4                0.76               0.06                       0.15               4110.96                   0.21
+hospital Butaleja              Bunyole               Kachonga    36261.01        0.83            4                0.92               0.30                       0.41               4101.25                   0.71
+hospital  Pallisa              Pallisa                Pallisa    19151.07        1.15            4                1.25               0.61                       0.81               3746.26                   0.92
+hospital   Wakiso               Busiro  Kajjansi Town Council   150640.94        1.67            4                1.71               0.76                       0.79               3679.65                   0.83
+Kotido      >1h dry  100%  worst ( 1)  100%  wet day  100%
+Nakapiripirit >1h dry  100%  worst ( 1)  100%  wet day  100%
+Agago       >1h dry   93%  worst ( 8)   93%  wet day   94%
+Kasese      >1h dry   80%  worst ( 4)   81%  wet day   84%
+Kikuube     >1h dry  100%  worst ( 1)  100%  wet day  100%
+Mayuge      >1h dry   94%  worst ( 4)   95%  wet day   97%

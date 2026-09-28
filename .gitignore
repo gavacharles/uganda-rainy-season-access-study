@@ -1,0 +1,6 @@
+.venv
+data/
+outputs/**/*.tif
+site/
+__pycache__/
+.DS_Store

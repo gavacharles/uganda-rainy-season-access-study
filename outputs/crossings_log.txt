@@ -1,0 +1,23 @@
+0/150
+25/150
+50/150
+75/150
+100/150
+125/150
+ford cells: 2548; screened: 150; distinct sites: 72; all fords bridged would save 113,984 person-hours per wet day
+     lon  lat  screen_score  person_hours_per_wet_day  people_within_1h  women_within_2h  wet_days_per_year  person_hours_per_year       subcounty    district nearest_road_class
+1   34.8  1.4       19200.3                   22285.6            6995.6           1512.8               53.1              1184415.7            Riwo       Bukwo          secondary
+2   34.8  1.4       16568.6                    8086.4            1512.1            626.3               53.1               429768.3          Karita      Amudat          secondary
+3   34.2  2.9       11725.5                    5492.8            1873.2            440.9               33.9               186141.7      Panyangara      Kotido          secondary
+4   29.9  0.3        7822.0                    2688.4               0.0              0.0               62.7               168680.7         Kilembe      Kasese               path
+5   31.2  2.4        7116.8                    2808.5             186.4              0.0               31.7                89140.4           Atego       Nebbi       unclassified
+6   29.9  0.3        7462.5                     778.5               0.0              0.0               62.7                48844.6        Kyarumba      Kasese               path
+7   34.2  2.9       10798.3                    1287.6               0.0            119.2               33.9                43633.9      Panyangara      Kotido          secondary
+8   29.9  0.3        7681.7                     418.9               0.0              0.0               62.7                26281.4          Bugoye      Kasese               path
+9   34.2  3.0        8858.2                     629.8              77.1              0.0               32.0                20136.4    Nakapelimoru      Kotido           tertiary
+10  34.7  1.4       15022.1                     260.6             286.1              0.0               66.7                17390.3           Kamet       Bukwo       unclassified
+11  30.0  0.5        8139.7                     386.5               0.0              0.0               40.1                15485.4        Kabonero  Bunyangabu               path
+12  30.0  0.2        8303.0                     219.1               0.0              0.0               40.0                 8775.7         Kilembe      Kasese               path
+13  29.9  0.3        7863.8                     132.4               0.0              0.0               62.7                 8307.3         Kilembe      Kasese            footway
+14  31.2  2.4        7088.6                     225.3             256.4              0.0               31.7                 7152.1           Atego       Nebbi              track
+15  34.1  3.0        7715.8                     204.4             242.1              0.0               32.0                 6536.6  North Division      Kotido               path

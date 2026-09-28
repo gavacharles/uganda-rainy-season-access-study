@@ -1,0 +1,65 @@
+/Users/charlesgava/uganda-seasons-paper/osm_accessibility/scripts/06_sensitivity.py:73: RuntimeWarning: All-NaN axis encountered
+  out[name] = np.nanmax(means) - np.nanmin(means)
+Baseline done
+/Users/charlesgava/uganda-seasons-paper/osm_accessibility/scripts/06_sensitivity.py:73: RuntimeWarning: All-NaN axis encountered
+  out[name] = np.nanmax(means) - np.nanmin(means)
+Earth roads keep 25% when wet done
+/Users/charlesgava/uganda-seasons-paper/osm_accessibility/scripts/06_sensitivity.py:73: RuntimeWarning: All-NaN axis encountered
+  out[name] = np.nanmax(means) - np.nanmin(means)
+Earth roads keep 60% when wet done
+/Users/charlesgava/uganda-seasons-paper/osm_accessibility/scripts/06_sensitivity.py:73: RuntimeWarning: All-NaN axis encountered
+  out[name] = np.nanmax(means) - np.nanmin(means)
+Gravel roads keep 50% when wet done
+/Users/charlesgava/uganda-seasons-paper/osm_accessibility/scripts/06_sensitivity.py:73: RuntimeWarning: All-NaN axis encountered
+  out[name] = np.nanmax(means) - np.nanmin(means)
+Gravel roads keep 90% when wet done
+/Users/charlesgava/uganda-seasons-paper/osm_accessibility/scripts/06_sensitivity.py:73: RuntimeWarning: All-NaN axis encountered
+  out[name] = np.nanmax(means) - np.nanmin(means)
+Fords 0.2 km/h when wet done
+/Users/charlesgava/uganda-seasons-paper/osm_accessibility/scripts/06_sensitivity.py:73: RuntimeWarning: All-NaN axis encountered
+  out[name] = np.nanmax(means) - np.nanmin(means)
+Fords 2 km/h when wet done
+/Users/charlesgava/uganda-seasons-paper/osm_accessibility/scripts/06_sensitivity.py:73: RuntimeWarning: All-NaN axis encountered
+  out[name] = np.nanmax(means) - np.nanmin(means)
+Ford blocks its whole 1 km cell done
+/Users/charlesgava/uganda-seasons-paper/osm_accessibility/scripts/06_sensitivity.py:73: RuntimeWarning: All-NaN axis encountered
+  out[name] = np.nanmax(means) - np.nanmin(means)
+Untagged secondary/tertiary = earth done
+/Users/charlesgava/uganda-seasons-paper/osm_accessibility/scripts/06_sensitivity.py:73: RuntimeWarning: All-NaN axis encountered
+  out[name] = np.nanmax(means) - np.nanmin(means)
+Road speeds ×0.75 done
+/Users/charlesgava/uganda-seasons-paper/osm_accessibility/scripts/06_sensitivity.py:73: RuntimeWarning: All-NaN axis encountered
+  out[name] = np.nanmax(means) - np.nanmin(means)
+Road speeds ×1.25 done
+/Users/charlesgava/uganda-seasons-paper/osm_accessibility/scripts/06_sensitivity.py:73: RuntimeWarning: All-NaN axis encountered
+  out[name] = np.nanmax(means) - np.nanmin(means)
+Walking 4 km/h done
+/Users/charlesgava/uganda-seasons-paper/osm_accessibility/scripts/06_sensitivity.py:73: RuntimeWarning: All-NaN axis encountered
+  out[name] = np.nanmax(means) - np.nanmin(means)
+Off-road keeps 40% when wet done
+/Users/charlesgava/uganda-seasons-paper/osm_accessibility/scripts/06_sensitivity.py:73: RuntimeWarning: All-NaN axis encountered
+  out[name] = np.nanmax(means) - np.nanmin(means)
+Wet day = rain ≥5 mm done
+/Users/charlesgava/uganda-seasons-paper/osm_accessibility/scripts/06_sensitivity.py:73: RuntimeWarning: All-NaN axis encountered
+  out[name] = np.nanmax(means) - np.nanmin(means)
+Wet day = rain ≥20 mm done
+/Users/charlesgava/uganda-seasons-paper/osm_accessibility/scripts/06_sensitivity.py:73: RuntimeWarning: All-NaN axis encountered
+  out[name] = np.nanmax(means) - np.nanmin(means)
+OSM facilities done
+                            variant  dry_over_1h  april_over_1h  april_minus_dry_pp  district_rank_corr  top15_overlap
+                           Baseline        0.131          0.181               4.976               1.000             15
+      Earth roads keep 25% when wet        0.131          0.210               7.838               0.984             15
+      Earth roads keep 60% when wet        0.131          0.162               3.031               0.966             11
+     Gravel roads keep 50% when wet        0.131          0.193               6.143               0.967             11
+     Gravel roads keep 90% when wet        0.131          0.174               4.255               0.966             14
+            Fords 0.2 km/h when wet        0.131          0.181               4.983               1.000             15
+              Fords 2 km/h when wet        0.131          0.181               4.963               1.000             15
+    Ford blocks its whole 1 km cell        0.131          0.187               5.526               0.878             11
+Untagged secondary/tertiary = earth        0.163          0.233               6.954               0.900              8
+                  Road speeds ×0.75        0.210          0.267               5.691               0.995             14
+                  Road speeds ×1.25        0.105          0.150               4.585               0.993             14
+                     Walking 4 km/h        0.135          0.185               4.978               0.999             15
+        Off-road keeps 40% when wet        0.131          0.184               5.215               0.992             13
+               Wet day = rain ≥5 mm        0.131          0.236              10.458               0.973             15
+              Wet day = rain ≥20 mm        0.131          0.139               0.788               0.916             10
+                     OSM facilities        0.134          0.179               4.514               0.940             12

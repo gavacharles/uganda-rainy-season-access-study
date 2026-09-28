@@ -1,0 +1,405 @@
+<title>Uganda Rainy-Season Access</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/*LEAFLET_CSS*/
+:root {
+  --paper: #f5f6f4; --panel: #ffffff; --ink: #17212b; --muted: #5b6570; --line: #dde0e3;
+  --accent: #1c5cab; --accent-soft: #e3eefb; --warm: #b8491c; --water: #d3d6d9;
+  --land-filter: none; --shadow: 0 1px 2px rgba(23,33,43,.08), 0 4px 16px rgba(23,33,43,.06);
+  --sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --cond: "IBM Plex Sans Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #111519; --panel: #182026; --ink: #e6e9ec; --muted: #9aa5af; --line: #2a333c;
+    --accent: #86b6ef; --accent-soft: #1d2d42; --warm: #f08a5d; --water: #1f262d;
+    --land-filter: brightness(.22); --shadow: 0 1px 2px rgba(0,0,0,.4), 0 4px 16px rgba(0,0,0,.3);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #111519; --panel: #182026; --ink: #e6e9ec; --muted: #9aa5af; --line: #2a333c;
+  --accent: #86b6ef; --accent-soft: #1d2d42; --warm: #f08a5d; --water: #1f262d;
+  --land-filter: brightness(.22); --shadow: 0 1px 2px rgba(0,0,0,.4), 0 4px 16px rgba(0,0,0,.3);
+  color-scheme: dark;
+}
+html, body { height: 100%; }
+body { background: var(--paper); color: var(--ink); font: 14px/1.5 var(--sans); }
+.app { display: grid; grid-template-columns: minmax(300px, 380px) 1fr; height: 100%; }
+.panel { overflow-y: auto; background: var(--panel); border-right: 1px solid var(--line);
+  padding: 20px 20px 28px; display: flex; flex-direction: column; gap: 18px; }
+h1 { font: 600 24px/1.15 var(--cond); margin: 0; text-wrap: balance; letter-spacing: -.005em; }
+.lede { margin: 6px 0 0; color: var(--muted); max-width: 60ch; }
+h2 { font: 600 11px/1 var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px; }
+.figures { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line);
+  border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.fig { background: var(--panel); padding: 10px 10px 9px; display: flex; flex-direction: column; gap: 2px; }
+.fig b { font: 500 20px/1.1 var(--mono); font-variant-numeric: tabular-nums; }
+.fig span { font-size: 11.5px; color: var(--muted); line-height: 1.3; }
+.fig.hot b { color: var(--warm); }
+.small { font-size: 12.5px; color: var(--muted); margin: 8px 0 0; }
+fieldset { border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.group-label { font: 600 12px/1.2 var(--sans); color: var(--ink); margin: 10px 0 4px; }
+.opt { display: flex; align-items: flex-start; gap: 8px; padding: 5px 8px; border-radius: 5px; cursor: pointer; }
+.opt:hover { background: var(--accent-soft); }
+.opt input { margin: 3px 0 0; accent-color: var(--accent); }
+.opt.sel { background: var(--accent-soft); }
+.monthbar { display: flex; align-items: center; gap: 10px; }
+.monthbar input[type=range] { flex: 1; accent-color: var(--accent); }
+button { font: 600 13px var(--sans); color: var(--panel); background: var(--accent); border: 0;
+  border-radius: 5px; padding: 6px 12px; cursor: pointer; min-width: 64px; }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.monthname { font: 500 13px var(--mono); min-width: 7.5ch; text-align: right; }
+.legend { display: flex; flex-direction: column; gap: 6px; }
+.ramp { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; border-radius: 3px; overflow: hidden; height: 14px; }
+.ramp-labels { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; font-size: 10.5px; color: var(--muted); text-align: center; line-height: 1.2; gap: 2px; }
+.cats { display: flex; flex-direction: column; gap: 4px; font-size: 12.5px; }
+.cats i { display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: 8px; vertical-align: -2px; }
+.note { font-size: 12.5px; color: var(--muted); margin: 0; }
+.toggles { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px; }
+.toggles label { display: flex; align-items: center; gap: 7px; font-size: 13px; cursor: pointer; padding: 3px 0; }
+.toggles input { accent-color: var(--accent); }
+.mark { width: 11px; height: 11px; border-radius: 50%; display: inline-block; flex: none; }
+.card { border: 1px solid var(--line); border-radius: 6px; padding: 12px 14px; }
+.card h3 { font: 600 17px/1.2 var(--cond); margin: 0; }
+.card .sub { color: var(--muted); font-size: 12.5px; margin: 2px 0 10px; }
+.card table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.card td { padding: 4px 0; border-top: 1px solid var(--line); vertical-align: top; }
+.card td:last-child { text-align: right; font: 500 12.5px var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; padding-left: 10px; }
+.empty { color: var(--muted); font-size: 13px; margin: 0; }
+.source { font-size: 11.5px; color: var(--muted); margin: 0; }
+.mapwrap { position: relative; min-height: 0; }
+#map { position: absolute; inset: 0; background: var(--water); }
+.leaflet-container { font: 12px var(--sans); background: var(--water); }
+.land-base { filter: var(--land-filter); }
+.maptitle { position: absolute; top: 12px; left: 12px; z-index: 500; background: var(--panel); color: var(--ink);
+  box-shadow: var(--shadow); border-radius: 6px; padding: 8px 12px; max-width: min(460px, calc(100% - 90px)); pointer-events: none; }
+.maptitle b { font: 600 15px/1.25 var(--cond); display: block; }
+.maptitle span { font-size: 12px; color: var(--muted); }
+.mapkey { position: absolute; right: 12px; bottom: 22px; z-index: 500; background: var(--panel); color: var(--ink);
+  box-shadow: var(--shadow); border-radius: 6px; padding: 10px 12px; width: 320px; max-width: calc(100% - 24px); }
+.mapkey h2 { margin-bottom: 6px; letter-spacing: .04em; text-transform: none; font-size: 12px; color: var(--ink); line-height: 1.3; }
+.north { background: var(--panel); color: var(--ink); box-shadow: var(--shadow); border-radius: 6px; width: 34px; height: 44px;
+  display: grid; place-items: center; font: 600 12px var(--sans); }
+.north svg { display: block; }
+.leaflet-control-scale-line { background: var(--panel); color: var(--ink); border-color: var(--ink); font: 11px var(--sans); }
+.leaflet-bar a { background: var(--panel); color: var(--ink); border-bottom-color: var(--line); }
+.leaflet-tooltip { font: 12px var(--sans); }
+.leaflet-popup-content { font: 13px/1.45 var(--sans); margin: 10px 14px; }
+@media (max-width: 760px) {
+  .app { grid-template-columns: 1fr; grid-template-rows: 62vh auto; height: auto; }
+  .mapwrap { order: -1; height: 62vh; }
+  .mapkey { width: auto; left: 12px; right: 12px; bottom: 30px; padding: 8px 10px; }
+  .panel { border-right: 0; border-top: 1px solid var(--line); overflow: visible; padding: 18px 16px 28px; }
+  .figures { grid-template-columns: 1fr 1fr 1fr; }
+}
+.surface { transition: opacity .5s ease; }
+.spark { width: 100%; height: auto; display: block; margin-top: 10px; overflow: visible; }
+.spark .line { fill: none; stroke: var(--accent); stroke-width: 2; }
+.spark .area { fill: var(--accent-soft); }
+.spark .base { stroke: var(--muted); stroke-dasharray: 3 3; stroke-width: 1; }
+.spark .dot { fill: var(--warm); stroke: var(--panel); stroke-width: 2; transition: cx .6s ease, cy .6s ease; }
+.spark .guide { stroke: var(--warm); stroke-width: 1; opacity: .5; transition: x1 .6s ease, x2 .6s ease; }
+.spark text { font: 10.5px var(--sans); fill: var(--muted); }
+.spark .val { font: 500 11.5px var(--mono); fill: var(--ink); transition: x .6s ease, y .6s ease; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="app">
+  <aside class="panel">
+    <header>
+      <h1>Uganda Rainy-Season Access</h1>
+      <p class="lede">How far people are from a hospital, a health centre, a school or a market, and how much further the rains make it, month by month.</p>
+    </header>
+
+    <section>
+      <h2>Nationally</h2>
+      <div class="figures" id="figures"></div>
+      <p class="small" id="figures-note"></p>
+    </section>
+
+    <section>
+      <h2>Month</h2>
+      <div class="monthbar">
+        <button id="play" type="button" aria-pressed="false">Play</button>
+        <input id="month" type="range" min="1" max="12" step="1" value="4" aria-label="Month">
+        <span class="monthname" id="monthname">April</span>
+      </div>
+      <svg class="spark" id="spark" viewBox="0 0 340 96" role="img" aria-label="Share of people more than 1 hour from a hospital, by month"></svg>
+      <p class="small">Line: share of Ugandans more than 1 h from a hospital each month; dashed: a dry day. The month applies to the two “By month” layers.</p>
+    </section>
+
+    <section>
+      <h2>Map layer</h2>
+      <fieldset id="views"></fieldset>
+    </section>
+
+    <section>
+      <h2>On the map</h2>
+      <div class="toggles">
+        <label><input type="checkbox" id="t-dist" checked> District borders</label>
+        <label><input type="checkbox" id="t-hosp" checked><span class="mark" style="background:var(--ink)"></span> Hospitals</label>
+        <label><input type="checkbox" id="t-hc4"><span class="mark" style="border:2px solid var(--ink)"></span> HC IVs</label>
+        <label><input type="checkbox" id="t-cross" checked><span class="mark" style="border:2px solid var(--warm)"></span> Crossings to bridge</label>
+        <label><input type="checkbox" id="t-catch"><span class="mark" style="background:#3987e5;opacity:.7"></span> Hospital catchments</label>
+      </div>
+    </section>
+
+    <section>
+      <h2>Selected place</h2>
+      <div id="details"><p class="empty">Click a sub-county, a crossing or a hospital on the map.</p></div>
+    </section>
+
+    <p class="source">Roads © OpenStreetMap contributors (ODbL). Motorised travel unless stated; walking where marked. Facilities: Ministry of Health public and not-for-profit list (Maina et al. 2019), levels as recorded. Population: WorldPop 2020, 1 km. Wet-day frequency: CHIRPS 2006–2025 (rain ≥ 10 mm, or the day after ≥ 25 mm). Wealth: Meta Relative Wealth Index. Ferries are not modelled, so island sub-counties show no road link.</p>
+  </aside>
+
+  <div class="mapwrap">
+    <div id="map" role="region" aria-label="Map of Uganda"></div>
+    <div class="maptitle"><b id="map-title"></b><span id="map-sub"></span></div>
+    <div class="mapkey legend" aria-live="polite">
+      <h2 id="legend-title">Key</h2>
+      <div id="legend"></div>
+      <p class="note" id="legend-note"></p>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+/*DATA*/
+const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const SEASON_COL = {"Mar–May":"#2a78d6","Jun–Aug":"#1baf7a","Sep–Nov":"#eb6834","Dec–Feb":"#4a3aa7","Little change":"#cfcac0","No road link":"#8f8c85"};
+const SEASON_LAB = {"Mar–May":"March–May (long rains)","Jun–Aug":"June–August","Sep–Nov":"September–November (short rains)","Dec–Feb":"December–February","Little change":"Little seasonal change (< 3 min)","No road link":"No road link (islands)"};
+const pct = v => v == null ? "–" : (v * 100).toFixed(v < 0.1 && v > 0 ? 1 : 0) + "%";
+const pts = v => v == null ? "–" : (v >= 0 ? "+" : "") + (v * 100).toFixed(1) + " pts";
+const num = v => Math.round(v).toLocaleString("en-GB");
+
+const VIEWS = [
+  {id:"month_raster", group:"By month", title:"Hospital travel time", type:"monthly_raster", key:"H",
+   keyTitle:"Expected travel time to the nearest hospital", note:"Each 1 km cell: the expected trip by road in the chosen month, given how often it rains there."},
+  {id:"month_sub", group:"By month", title:"Sub-counties more than 1 h from a hospital", type:"monthly_sub", key:"S",
+   keyTitle:"Share of people more than 1 hour from a hospital", note:"Motorised. Unreachable people (islands) count as more than 1 hour."},
+  {id:"hosp_dry", group:"Travel time (1 km cells)", title:"Hospital, dry day", type:"raster", key:"H", keyTitle:"Travel time to the nearest hospital", note:"If no day were wet."},
+  {id:"hosp_wet", group:"Travel time (1 km cells)", title:"Hospital, a wet day", type:"raster", key:"H", keyTitle:"Travel time to the nearest hospital", note:"Unpaved roads slowed; roads through fords blocked."},
+  {id:"hosp_extra", group:"Travel time (1 km cells)", title:"Minutes the April rains add", type:"raster", key:"E", keyTitle:"Extra minutes to hospital, April vs dry day", note:"Populated cells only."},
+  {id:"emoc_walk", group:"Travel time (1 km cells)", title:"HC IV or hospital on foot, April", type:"raster", key:"W", keyTitle:"Walking time to emergency obstetric care", note:"The benchmark is surgical and obstetric care within 2 hours."},
+  {id:"any_walk", group:"Travel time (1 km cells)", title:"Any health facility on foot, April", type:"raster", key:"W", keyTitle:"Walking time to the nearest facility", note:"The first point of care for most rural households."},
+  {id:"sec_apr", group:"Travel time (1 km cells)", title:"Secondary school, April", type:"raster", key:"H", keyTitle:"Travel time to the nearest secondary school", note:"Schools from OpenStreetMap; completeness varies."},
+  {id:"mkt_apr", group:"Travel time (1 km cells)", title:"Market, April", type:"raster", key:"H", keyTitle:"Travel time to the nearest market", note:"Markets from OpenStreetMap; completeness varies."},
+  {id:"rwi", group:"Travel time (1 km cells)", title:"Relative wealth", type:"raster", key:"R", keyTitle:"Relative Wealth Index (Meta)", note:"Populated cells only."},
+  {id:"s_increase", group:"Sub-county statistics", title:"Rise in share > 1 h from a hospital", type:"sub", prop:"hosp_increase", key:"I", keyTitle:"Increase in the worst month, percentage points", note:"Worst month minus dry day."},
+  {id:"s_walk", group:"Sub-county statistics", title:"> 1 h on foot from any facility", type:"sub", prop:"walk_any_worst", key:"S", keyTitle:"Share of people, worst month", note:"Walking only."},
+  {id:"s_emoc", group:"Sub-county statistics", title:"Women > 2 h on foot from HC IV or hospital", type:"sub", prop:"emoc_walk_worst", key:"S", keyTitle:"Share of women 15–49, worst month", note:"Emergency obstetric care, walking only."},
+  {id:"s_season", group:"Sub-county statistics", title:"Worst season for the hospital trip", type:"season", keyTitle:"Season of the longest average trip", note:"By road, to the nearest hospital."},
+];
+
+const state = { view: "month_raster", month: 4, timer: null };
+const cssVar = name => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+try { const v = localStorage.getItem("rsa-view"); if (v && VIEWS.some(x => x.id === v)) state.view = v; } catch (e) {}
+
+// ---- Map ---------------------------------------------------------------------------------
+const map = L.map("map", { zoomSnap: 0.25, attributionControl: false, zoomControl: false, minZoom: 6, maxZoom: 12 });
+map.fitBounds(DATA.bounds, { padding: [20, 20] });
+L.control.zoom({ position: "topright" }).addTo(map);
+const North = L.Control.extend({ options: { position: "topright" }, onAdd() {
+  const d = L.DomUtil.create("div", "north"); d.setAttribute("aria-label", "North arrow");
+  d.innerHTML = '<svg width="14" height="20" viewBox="0 0 14 20"><path d="M7 0 L14 20 L7 15 L0 20 Z" fill="currentColor"/></svg><span>N</span>';
+  return d; } });
+new North().addTo(map);
+L.control.scale({ metric: true, imperial: false, position: "bottomleft", maxWidth: 160 }).addTo(map);
+
+L.imageOverlay(DATA.land, DATA.bounds, { className: "land-base", interactive: false }).addTo(map);
+// Two stacked overlays; a new frame loads into the hidden one and fades in.
+const frames = [L.imageOverlay(DATA.monthly[3], DATA.bounds, { opacity: 0.95, interactive: false, className: "surface" }).addTo(map),
+                L.imageOverlay(DATA.monthly[3], DATA.bounds, { opacity: 0, interactive: false, className: "surface" }).addTo(map)];
+let front = 0;
+function showRaster(url) {
+  if (url === null) { frames.forEach(f => f.setOpacity(0)); return; }
+  if (frames[front].options.opacity > 0 && frames[front]._url === url) return;
+  const back = 1 - front;
+  frames[back].setUrl(url);
+  frames[back].setOpacity(0.95);
+  frames[front].setOpacity(0);
+  front = back;
+}
+
+const binOf = (v, bins) => { if (v == null) return -1; let k = 0; for (let i = 0; i < bins.length; i++) if (v >= bins[i]) k = i; return k; };
+function subStyle(f) {
+  const v = VIEWS.find(x => x.id === state.view), p = f.properties;
+  const base = { color: cssVar("--panel"), weight: 0.35, opacity: 0.6, fillOpacity: 0 };
+  if (v.type === "raster" || v.type === "monthly_raster") return base;
+  let fill;
+  if (v.type === "season") fill = SEASON_COL[p.s];
+  else {
+    const val = v.type === "monthly_sub" ? p.m[state.month - 1] : p[v.prop];
+    const k = binOf(val, DATA.bins[v.key]);
+    fill = k < 0 ? "#cfcac0" : DATA.swatches[v.key][k];
+  }
+  return { ...base, fillColor: fill, fillOpacity: 0.92 };
+}
+let selectedLayer = null;
+const subs = L.geoJSON(DATA.subs, { style: subStyle, onEachFeature(f, layer) {
+  layer.on("click", () => { selectSub(f.properties, layer); });
+  layer.on("mouseover", () => layer.setStyle({ weight: 1.6, color: cssVar("--ink"), opacity: 1 }));
+  layer.on("mouseout", () => { if (layer !== selectedLayer) subs.resetStyle(layer); });
+  layer.bindTooltip(`${f.properties.n} (${f.properties.d})`, { sticky: true, direction: "top", opacity: 0.95 });
+} }).addTo(map);
+const districts = L.geoJSON(DATA.districts, { style: () => ({ color: cssVar("--ink"), weight: 0.7, opacity: 0.45 }), interactive: false }).addTo(map);
+
+const hospitals = L.layerGroup(DATA.hospitals.map(([la, lo, n]) =>
+  L.circleMarker([la, lo], { radius: 4.5, color: cssVar("--panel"), weight: 1.2, fillColor: cssVar("--ink"), fillOpacity: 1 })
+    .bindTooltip(n, { direction: "top" }).on("click", () => showPoint(n, "Hospital", []))));
+hospitals.addTo(map);
+const hc4 = L.layerGroup(DATA.hc4.map(([la, lo, n]) =>
+  L.circleMarker([la, lo], { radius: 3.5, color: cssVar("--ink"), weight: 1.4, fillColor: cssVar("--panel"), fillOpacity: 1 })
+    .bindTooltip(n, { direction: "top" }).on("click", () => showPoint(n, "Health Centre IV", []))));
+const maxH = Math.max(...DATA.crossings.map(c => c.hours));
+const crossings = L.layerGroup(DATA.crossings.map(c =>
+  L.circleMarker([c.lat, c.lon], { radius: 5 + 13 * Math.sqrt(c.hours / maxH), color: cssVar("--warm"), weight: 2.2, fill: false })
+    .bindTooltip(`Crossing ${c.rank}: ${c.sub} (${c.dist})`, { direction: "top" })
+    .on("click", () => showPoint(`Crossing ${c.rank}: ${c.sub}`, `${c.dist} district · nearest road: ${c.road}`, [
+      ["Person-hours saved a year", num(c.hours)], ["People brought within 1 h (wet day)", num(c.within1)],
+      ["Women 15–49 brought within 2 h", num(c.women2)], ["Wet days a year at the crossing", c.wet]]))));
+crossings.addTo(map);
+const catchments = L.layerGroup(DATA.catchments.map(c =>
+  L.circleMarker([c.lat, c.lon], { radius: Math.sqrt(c.extra) / 14, color: "#ffffff", weight: 1, fillColor: "#3987e5", fillOpacity: 0.65 })
+    .bindTooltip(c.name, { direction: "top" })
+    .on("click", () => showPoint(c.name, "Hospital catchment (nearest hospital on a dry day)", [
+      ["Catchment population", num(c.pop)], ["More than 1 h away, dry day", num(c.dry)],
+      ["More than 1 h away, April", num(c.apr)], ["Pushed beyond 1 h in April", num(c.extra)]]))));
+
+const toggle = (id, layer) => document.getElementById(id).addEventListener("change", e => e.target.checked ? layer.addTo(map) : map.removeLayer(layer));
+toggle("t-dist", districts); toggle("t-hosp", hospitals); toggle("t-hc4", hc4); toggle("t-cross", crossings); toggle("t-catch", catchments);
+
+// ---- Panel ---------------------------------------------------------------------------------
+const H = DATA.headline;
+document.getElementById("figures").innerHTML = `
+  <div class="fig"><b>${pct(H.hosp_dry)}</b><span>more than 1 h from a hospital on a dry day</span></div>
+  <div class="fig hot"><b>${pct(H.hosp_apr)}</b><span>in April, the worst month</span></div>
+  <div class="fig"><b>${pct(H.hosp_wet)}</b><span>on a day when every road is wet</span></div>
+  <div class="fig"><b>${pct(H.any_walk_dry)}</b><span>more than 1 h on foot from any facility, dry day</span></div>
+  <div class="fig hot"><b>${pct(H.any_walk_apr)}</b><span>on foot, in April</span></div>
+  <div class="fig"><b>${pct(H.emoc_walk_apr)}</b><span>of women 15–49 more than 2 h on foot from an HC IV or hospital in April</span></div>`;
+document.getElementById("figures-note").textContent =
+  `April pushes about ${(H.pop * (H.hosp_apr - H.hosp_dry) / 1e6).toFixed(1)} million more people beyond 1 hour from a hospital. Motorised unless marked “on foot”.`;
+
+const viewsEl = document.getElementById("views");
+let lastGroup = null;
+VIEWS.forEach(v => {
+  if (v.group !== lastGroup) { const g = document.createElement("div"); g.className = "group-label"; g.textContent = v.group; viewsEl.appendChild(g); lastGroup = v.group; }
+  const lab = document.createElement("label"); lab.className = "opt"; lab.htmlFor = "v-" + v.id;
+  lab.innerHTML = `<input type="radio" name="view" id="v-${v.id}" value="${v.id}"><span>${v.title}</span>`;
+  viewsEl.appendChild(lab);
+});
+viewsEl.addEventListener("change", e => { state.view = e.target.value; try { localStorage.setItem("rsa-view", state.view); } catch (err) {} render(); });
+
+function legendHTML(v) {
+  if (v.type === "season") {
+    const counts = {}; DATA.subs.features.forEach(f => counts[f.properties.s] = (counts[f.properties.s] || 0) + 1);
+    return `<div class="cats">${Object.keys(SEASON_COL).map(k => `<div><i style="background:${SEASON_COL[k]}"></i>${SEASON_LAB[k]} <span style="color:var(--muted)">(${counts[k] || 0})</span></div>`).join("")}</div>`;
+  }
+  const sw = DATA.swatches[v.key], lab = DATA.labels[v.key];
+  return `<div class="ramp">${sw.map(c => `<span style="background:${c}"></span>`).join("")}</div>
+          <div class="ramp-labels">${lab.map(l => `<span>${l}</span>`).join("")}</div>`;
+}
+
+function render() {
+  const v = VIEWS.find(x => x.id === state.view);
+  document.getElementById("v-" + v.id).checked = true;
+  document.querySelectorAll(".opt").forEach(o => o.classList.toggle("sel", o.htmlFor === "v-" + v.id));
+  const monthly = v.type === "monthly_raster" || v.type === "monthly_sub";
+  if (v.type === "monthly_raster") showRaster(DATA.monthly[state.month - 1]);
+  else if (v.type === "raster") showRaster(DATA.surfaces[v.id]);
+  else showRaster(null);
+  moveSpark();
+  subs.setStyle(subStyle);
+  const m = MONTHS[state.month - 1];
+  document.getElementById("map-title").textContent = monthly ? `${v.title}, ${m}` : v.title;
+  document.getElementById("map-sub").textContent = monthly
+    ? `${pct(H.monthly[state.month - 1])} of Ugandans more than 1 h from a hospital in ${m} (dry day ${pct(H.hosp_dry)})`
+    : v.note;
+  document.getElementById("legend-title").textContent = v.keyTitle;
+  document.getElementById("legend").innerHTML = legendHTML(v);
+  document.getElementById("legend-note").textContent = monthly ? v.note : "";
+  document.getElementById("monthname").textContent = m;
+  document.getElementById("month").value = state.month;
+}
+
+const monthEl = document.getElementById("month");
+monthEl.addEventListener("input", e => { state.month = +e.target.value; render(); });
+const playEl = document.getElementById("play");
+playEl.addEventListener("click", () => {
+  if (state.timer) { clearInterval(state.timer); state.timer = null; playEl.textContent = "Play"; playEl.setAttribute("aria-pressed", "false"); return; }
+  const v = VIEWS.find(x => x.id === state.view);
+  if (v.type !== "monthly_raster" && v.type !== "monthly_sub") { state.view = "month_raster"; }
+  playEl.textContent = "Pause"; playEl.setAttribute("aria-pressed", "true");
+  state.timer = setInterval(() => { state.month = state.month % 12 + 1; render(); }, reduceMotion ? 1600 : 1100);
+  render();
+});
+
+// ---- Annual curve with a marker that follows the month --------------------------------------
+const SP = { w: 340, h: 96, l: 30, r: 12, t: 16, b: 20 };
+const ys = H.monthly.concat([H.hosp_dry]);
+const lo = Math.floor(Math.min(...ys) * 100 - 0.5), hi = Math.ceil(Math.max(...ys) * 100 + 0.5);
+const sx = m => SP.l + (m - 1) * (SP.w - SP.l - SP.r) / 11;
+const sy = v => SP.t + (hi - v * 100) * (SP.h - SP.t - SP.b) / (hi - lo);
+(function buildSpark() {
+  const line = H.monthly.map((v, i) => `${sx(i + 1)},${sy(v)}`).join(" ");
+  const area = `${sx(1)},${sy(lo / 100)} ${line} ${sx(12)},${sy(lo / 100)}`;
+  const ticks = [lo, Math.round((lo + hi) / 2), hi].map(t => `<text x="${SP.l - 5}" y="${sy(t / 100) + 3.5}" text-anchor="end">${t}%</text>`).join("");
+  const months = MONTHS.map((m, i) => `<text x="${sx(i + 1)}" y="${SP.h - 4}" text-anchor="middle">${m[0]}</text>`).join("");
+  document.getElementById("spark").innerHTML = `<polygon class="area" points="${area}"/>
+    <line class="base" x1="${sx(1)}" x2="${sx(12)}" y1="${sy(H.hosp_dry)}" y2="${sy(H.hosp_dry)}"/>
+    <polyline class="line" points="${line}"/>${ticks}${months}
+    <line class="guide" id="sp-guide" y1="${SP.t - 4}" y2="${SP.h - SP.b}"/>
+    <circle class="dot" id="sp-dot" r="5"/><text class="val" id="sp-val" text-anchor="middle"></text>`;
+})();
+function moveSpark() {
+  const x = sx(state.month), v = H.monthly[state.month - 1], y = sy(v);
+  const dot = document.getElementById("sp-dot"), g = document.getElementById("sp-guide"), t = document.getElementById("sp-val");
+  dot.setAttribute("cx", x); dot.setAttribute("cy", y); dot.style.cx = x + "px"; dot.style.cy = y + "px";
+  g.setAttribute("x1", x); g.setAttribute("x2", x);
+  const tx = Math.min(Math.max(x, SP.l + 16), SP.w - 18);
+  t.setAttribute("x", tx); t.setAttribute("y", Math.max(y - 9, 10)); t.textContent = pct(v);
+}
+
+// Re-colour map strokes and points when the viewer switches theme.
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", restyle);
+new MutationObserver(restyle).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+function restyle() {
+  subs.setStyle(subStyle); districts.setStyle({ color: cssVar("--ink") });
+  hospitals.eachLayer(l => l.setStyle({ color: cssVar("--panel"), fillColor: cssVar("--ink") }));
+  hc4.eachLayer(l => l.setStyle({ color: cssVar("--ink"), fillColor: cssVar("--panel") }));
+  crossings.eachLayer(l => l.setStyle({ color: cssVar("--warm") }));
+}
+
+function row(k, v) { return `<tr><td>${k}</td><td>${v}</td></tr>`; }
+function selectSub(p, layer) {
+  if (selectedLayer) subs.resetStyle(selectedLayer);
+  selectedLayer = layer; layer.setStyle({ weight: 2.2, color: cssVar("--warm"), opacity: 1 }); layer.bringToFront();
+  document.getElementById("details").innerHTML = `<div class="card">
+    <h3>${p.n}</h3><p class="sub">${p.d} district · ${num(p.p)} people</p>
+    <table>
+      ${row("More than 1 h from a hospital, dry day", pct(p.hosp_dry))}
+      ${row(`Worst month (${MONTHS[p.wm - 1]})`, pct(p.hosp_worst))}
+      ${row("On a wet day", pct(p.hosp_wet))}
+      ${row("People pushed beyond 1 h in the worst month", num(p.pushed))}
+      ${row(`More than 1 h from a hospital in ${MONTHS[state.month - 1]}`, pct(p.m[state.month - 1]))}
+      ${row("On foot, > 1 h from any facility (dry / worst)", `${pct(p.walk_any_dry)} / ${pct(p.walk_any_worst)}`)}
+      ${row("Women 15–49 > 2 h on foot from HC IV or hospital (dry / worst)", `${pct(p.emoc_walk_dry)} / ${pct(p.emoc_walk_worst)}`)}
+      ${row("> 1 h from a secondary school, April", pct(p.school_apr))}
+      ${row("> 1 h from a market, April", pct(p.market_apr))}
+      ${row("Relative Wealth Index", p.rwi == null ? "–" : p.rwi.toFixed(2))}
+    </table></div>`;
+}
+function showPoint(name, sub, rows) {
+  document.getElementById("details").innerHTML = `<div class="card"><h3>${name}</h3><p class="sub">${sub}</p>
+    ${rows.length ? `<table>${rows.map(([k, v]) => row(k, v)).join("")}</table>` : ""}</div>`;
+}
+
+render();
+</script>

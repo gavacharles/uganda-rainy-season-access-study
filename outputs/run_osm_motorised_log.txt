@@ -1,0 +1,75 @@
+run: osm facilities, motorised; ford cells: 2822
+destinations: {'hospital': 273, 'HC IV or hospital': 420, 'any facility': 6976, 'secondary school': 3514, 'market': 883, 'town': 254}
+           target scenario period            group  mean_hours  share_over_1h  share_over_2h
+         hospital  dry day                everyone       0.500          0.134          0.020
+         hospital  dry day             women 15-49       0.490          0.133          0.021
+         hospital  dry day        children under 5       0.515          0.139          0.019
+         hospital  wet day                everyone       0.822          0.296          0.091
+         hospital  wet day             women 15-49       0.805          0.288          0.091
+         hospital  wet day        children under 5       0.846          0.310          0.092
+         hospital        4   late         everyone       0.575          0.179          0.032
+         hospital        4   late      women 15-49       0.563          0.176          0.033
+         hospital        4   late children under 5       0.593          0.187          0.031
+         hospital        8   late         everyone       0.556          0.165          0.032
+         hospital        8   late      women 15-49       0.545          0.163          0.033
+         hospital        8   late children under 5       0.572          0.172          0.030
+HC IV or hospital  dry day                everyone       0.373          0.072          0.010
+HC IV or hospital  dry day             women 15-49       0.366          0.072          0.010
+HC IV or hospital  dry day        children under 5       0.383          0.072          0.009
+HC IV or hospital  wet day                everyone       0.646          0.214          0.051
+HC IV or hospital  wet day             women 15-49       0.634          0.209          0.052
+HC IV or hospital  wet day        children under 5       0.664          0.222          0.051
+HC IV or hospital        4   late         everyone       0.438          0.105          0.016
+HC IV or hospital        4   late      women 15-49       0.429          0.104          0.016
+HC IV or hospital        4   late children under 5       0.449          0.107          0.015
+HC IV or hospital        8   late         everyone       0.420          0.096          0.016
+HC IV or hospital        8   late      women 15-49       0.412          0.096          0.017
+HC IV or hospital        8   late children under 5       0.431          0.098          0.016
+     any facility  dry day                everyone       0.139          0.015          0.004
+     any facility  dry day             women 15-49       0.137          0.015          0.004
+     any facility  dry day        children under 5       0.141          0.014          0.004
+     any facility  wet day                everyone       0.267          0.043          0.013
+     any facility  wet day             women 15-49       0.263          0.043          0.013
+     any facility  wet day        children under 5       0.272          0.043          0.012
+     any facility        4   late         everyone       0.167          0.020          0.006
+     any facility        4   late      women 15-49       0.164          0.020          0.006
+     any facility        4   late children under 5       0.170          0.019          0.006
+     any facility        8   late         everyone       0.159          0.019          0.006
+     any facility        8   late      women 15-49       0.157          0.019          0.006
+     any facility        8   late children under 5       0.162          0.018          0.005
+ secondary school  dry day                everyone       0.167          0.024          0.006
+ secondary school  dry day             women 15-49       0.166          0.025          0.007
+ secondary school  dry day        children under 5       0.167          0.022          0.006
+ secondary school  wet day                everyone       0.324          0.061          0.022
+ secondary school  wet day             women 15-49       0.321          0.062          0.023
+ secondary school  wet day        children under 5       0.325          0.060          0.021
+ secondary school        4   late         everyone       0.201          0.029          0.010
+ secondary school        4   late      women 15-49       0.199          0.030          0.011
+ secondary school        4   late children under 5       0.201          0.027          0.009
+ secondary school        8   late         everyone       0.192          0.029          0.010
+ secondary school        8   late      women 15-49       0.191          0.030          0.011
+ secondary school        8   late children under 5       0.193          0.027          0.009
+           market  dry day                everyone       0.547          0.170          0.026
+           market  dry day             women 15-49       0.534          0.167          0.027
+           market  dry day        children under 5       0.566          0.177          0.026
+           market  wet day                everyone       0.882          0.325          0.113
+           market  wet day             women 15-49       0.860          0.315          0.111
+           market  wet day        children under 5       0.911          0.341          0.116
+           market        4   late         everyone       0.627          0.214          0.043
+           market        4   late      women 15-49       0.611          0.209          0.043
+           market        4   late children under 5       0.649          0.224          0.042
+           market        8   late         everyone       0.605          0.199          0.040
+           market        8   late      women 15-49       0.590          0.195          0.041
+           market        8   late children under 5       0.625          0.208          0.039
+             town  dry day                everyone       0.378          0.062          0.011
+             town  dry day             women 15-49       0.371          0.062          0.011
+             town  dry day        children under 5       0.388          0.063          0.010
+             town  wet day                everyone       0.644          0.210          0.047
+             town  wet day             women 15-49       0.632          0.205          0.047
+             town  wet day        children under 5       0.662          0.219          0.047
+             town        4   late         everyone       0.439          0.094          0.017
+             town        4   late      women 15-49       0.431          0.093          0.017
+             town        4   late children under 5       0.451          0.097          0.016
+             town        8   late         everyone       0.421          0.086          0.015
+             town        8   late      women 15-49       0.414          0.085          0.016
+             town        8   late children under 5       0.433          0.089          0.015

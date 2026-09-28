@@ -1,0 +1,43 @@
+runs: ['motorised', 'walking'] | RWI covers 97% of population | refugee-site sub-counties: 14
+             dry  worst
+mode                   
+motorised  0.008  0.012
+walking    0.408  0.438
+     mode  destination  threshold_h  quintile  population   dry  april  august  wet_day
+motorised     hospital            1         1 8903344.275 0.234  0.322   0.304    0.521
+motorised     hospital            1         2 8903791.564 0.162  0.235   0.212    0.414
+motorised     hospital            1         3 8904227.361 0.102  0.156   0.136    0.308
+motorised     hospital            1         4 8903519.952 0.059  0.091   0.076    0.178
+motorised     hospital            1         5 8904063.953 0.008  0.010   0.008    0.018
+motorised any_facility            1         1 8903344.275 0.009  0.012   0.012    0.046
+motorised any_facility            1         2 8903791.564 0.003  0.004   0.004    0.018
+motorised any_facility            1         3 8904227.361 0.001  0.002   0.002    0.009
+motorised any_facility            1         4 8903519.952 0.002  0.002   0.002    0.006
+motorised any_facility            1         5 8904063.953 0.000  0.000   0.000    0.000
+  walking     hospital            1         1 8903344.275 0.968  0.974   0.973    0.983
+  walking     hospital            1         2 8903791.564 0.945  0.954   0.952    0.968
+  walking     hospital            1         3 8904227.361 0.926  0.937   0.933    0.951
+  walking     hospital            1         4 8903519.952 0.839  0.852   0.847    0.874
+  walking     hospital            1         5 8904063.953 0.394  0.404   0.401    0.423
+  walking any_facility            1         1 8903344.275 0.307  0.368   0.356    0.525
+  walking any_facility            1         2 8903791.564 0.205  0.255   0.241    0.396
+  walking any_facility            1         3 8904227.361 0.143  0.179   0.169    0.291
+  walking any_facility            1         4 8903519.952 0.085  0.109   0.101    0.189
+  walking any_facility            1         5 8904063.953 0.009  0.012   0.011    0.020
+     mode  destination           subcounties   population  dry_share_over_1h  4_share_over_1h  8_share_over_1h  wet_share_over_1h
+motorised     hospital with OSM refugee site   630371.429              0.215            0.326            0.303              0.576
+motorised     hospital                 other 45110628.568              0.130            0.179            0.164              0.302
+  walking any_facility with OSM refugee site   630371.429              0.314            0.344            0.345              0.467
+  walking any_facility                 other 45110628.568              0.166            0.201            0.192              0.299
+                                  hospital  catchment_population  over_1h_dry  over_1h_april  extra_over_1h_april
+cell                                                                                                             
+285352  Mubende Regional Referral Hospital             1146295.0     330200.0       484860.0             154660.0
+155337     Lira Regional Referral Hospital             1317820.0     314022.0       455058.0             141036.0
+257570                     Kamuli Hospital              745298.0     223359.0       349932.0             126573.0
+256641                     Kagadi Hospital             1023549.0     267840.0       385761.0             117921.0
+240063                    Pallisa Hospital              720838.0      49907.0       157603.0             107696.0
+281357                   Kyenjojo Hospital              888995.0     189038.0       280442.0              91404.0
+349195                Villa Maria Hospital              313500.0      58740.0       139498.0              80758.0
+343191                     Ibanda Hospital             1000328.0     161671.0       241183.0              79513.0
+185979                      Lwala Hospital              671340.0     112225.0       191300.0              79075.0
+260013                     Kiboga Hospital              593497.0     108474.0       183761.0              75286.0

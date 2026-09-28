@@ -1,0 +1,28 @@
+sub-counties without a populated 1 km cell (too small for the grid): 0
+  target     district       county  subcounty  population  dry_mean_h  worst_month  worst_month_mean_h  dry_share_over_1h  worst_month_share_over_1h  extra_people_over_1h  wet_day_share_over_1h
+hospital       Mayuge        Bunya    Malongo   132847.60        1.02            4                1.22               0.59                       0.93              44738.93                   1.00
+hospital      Buyende      Budiope     Kagulu   108216.28        1.03            4                1.18               0.33                       0.66              35095.25                   0.98
+hospital      Mubende     Buwekula  Butoloogo    60745.84        0.92            4                1.16               0.26                       0.84              34650.44                   1.00
+hospital      Kikuube     Buhaguzi  Kyangwali   135665.06        1.02            4                1.23               0.54                       0.77              32255.29                   1.00
+hospital       Mayuge        Bunya  Bukabooli    66393.40        0.85            4                1.04               0.09                       0.55              30212.34                   0.99
+hospital     Kassanda     Kassanda    Kitumbi    80562.96        0.82            4                1.01               0.22                       0.57              28176.72                   0.93
+hospital       Kaliro     Bulamogi   Gadumire    35153.04        0.90            4                1.28               0.16                       0.95              27609.14                   1.00
+hospital    Namayingo      Bukooli      Banda    60523.86        0.81            4                0.99               0.01                       0.47              27559.81                   1.00
+hospital       Luwero   Bamunanika    Kikyusa    43320.73        0.89            4                1.16               0.24                       0.84              26129.75                   1.00
+hospital      Buyende      Budiope    Buyende    73160.09        0.95            4                1.11               0.33                       0.68              25787.27                   1.00
+hospital     Kyegegwa        Kyaka      Mpara    75092.73        0.96            4                1.05               0.33                       0.67              25461.99                   0.99
+hospital Bukomansimbi Bukomansimbi     Bigasa    46626.56        0.93            4                1.23               0.30                       0.79              22727.02                   1.00
+hospital         Lira        Erute     Agweng    36140.36        0.85            8                1.07               0.04                       0.67              22490.88                   1.00
+hospital      Kalungu      Kalungu   Lwabenge    39599.39        1.01            4                1.33               0.43                       0.98              21672.72                   1.00
+hospital       Kaliro     Bulamogi    Buyinda    25546.19        0.91            4                1.22               0.18                       1.00              20963.93                   1.00
+hospital    Namayingo      Bukooli    Mutumba    57791.79        1.09            4                1.41               0.62                       0.98              20938.11                   1.00
+hospital Bukomansimbi Bukomansimbi    Kitanda    33109.03        0.85            4                1.12               0.13                       0.75              20304.55                   1.00
+hospital       Kwania       Kwania Abongomola    45635.46        0.88            9                1.09               0.25                       0.68              19849.36                   0.97
+hospital        Gomba        Gomba Kabulasoke    59530.45        0.98            4                1.20               0.35                       0.68              19652.58                   1.00
+hospital     Kakumiro   Bugangaizi   Katikara    34990.05        0.97            4                1.14               0.34                       0.90              19595.93                   1.00
+Kotido      >1h dry   99%  worst ( 8)  100%  wet day  100%
+Nakapiripirit >1h dry   97%  worst ( 4)   99%  wet day  100%
+Agago       >1h dry   45%  worst ( 8)   64%  wet day   82%
+Kasese      >1h dry   15%  worst ( 4)   17%  wet day   26%
+Kikuube     >1h dry   33%  worst ( 4)   43%  wet day   58%
+Mayuge      >1h dry   17%  worst ( 4)   31%  wet day   52%

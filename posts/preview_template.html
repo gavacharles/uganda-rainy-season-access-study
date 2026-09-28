@@ -1,0 +1,116 @@
+<title>Rainy-Season Access Posts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap">
+<style>
+:root {
+  --paper: #fbfbf9; --ink: #1b2530; --muted: #5d6873; --line: #e1e3e5; --accent: #1c5cab;
+  --soft: #eef3fa; --code: #f3f4f5;
+  --serif: "Literata", Georgia, "Times New Roman", serif;
+  --sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --cond: "IBM Plex Sans Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --paper: #13171b; --ink: #e5e8eb; --muted: #9ba5ae; --line: #2a3138;
+    --accent: #86b6ef; --soft: #1b2634; --code: #1b2127; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --paper: #13171b; --ink: #e5e8eb; --muted: #9ba5ae; --line: #2a3138;
+  --accent: #86b6ef; --soft: #1b2634; --code: #1b2127; color-scheme: dark; }
+body { background: var(--paper); color: var(--ink); font: 18px/1.65 var(--serif); padding-inline: 16px; }
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--paper);
+  border-bottom: 1px solid var(--line); margin-inline: -16px; padding: 10px 16px; font: 500 13px var(--sans);
+  display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
+.bar b { font-weight: 600; color: var(--muted); letter-spacing: .06em; text-transform: uppercase; font-size: 11.5px; }
+.bar a { color: var(--accent); text-decoration: none; }
+.bar a:hover, .bar a:focus-visible { text-decoration: underline; }
+main { max-width: 680px; margin: 0 auto; padding-block: 36px 64px; }
+.help { font: 14px/1.5 var(--sans); color: var(--muted); background: var(--soft); border-radius: 6px; padding: 12px 14px; margin: 0 0 36px; }
+.help p { margin: 0; }
+h1 { font: 600 40px/1.1 var(--cond); letter-spacing: -.01em; margin: 0 0 10px; text-wrap: balance; }
+h1 + p em { font-size: 20px; color: var(--muted); }
+h2 { font: 600 25px/1.2 var(--cond); margin: 44px 0 10px; text-wrap: balance; }
+p { margin: 0 0 18px; }
+a { color: var(--accent); }
+strong { font-weight: 600; }
+ul { padding-left: 22px; margin: 0 0 18px; }
+li { margin-bottom: 8px; }
+hr { border: 0; border-top: 1px solid var(--line); margin: 32px 0; }
+figure { margin: 26px -8px 28px; }
+figure img { display: block; width: 100%; height: auto; border-radius: 4px; border: 1px solid var(--line); background: #fcfcfb; }
+figcaption { font: 14px/1.45 var(--sans); color: var(--muted); margin-top: 8px; padding-inline: 8px; }
+.tablewrap, table { font: 15px/1.4 var(--sans); }
+table { border-collapse: collapse; width: 100%; margin: 6px 0 22px; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+th { font-weight: 600; color: var(--muted); font-size: 13px; }
+td:not(:first-child), th:not(:first-child) { text-align: right; }
+.linkedin { margin-top: 64px; padding-top: 28px; border-top: 3px solid var(--ink); }
+.linkedin h2 { margin-top: 0; }
+.meta { font: 14px var(--sans); color: var(--muted); margin: -4px 0 14px; }
+pre { white-space: pre-wrap; font: 15.5px/1.55 var(--sans); background: var(--code); border: 1px solid var(--line);
+  border-radius: 6px; padding: 16px 18px; margin: 0 0 12px; }
+button { font: 600 14px var(--sans); color: var(--paper); background: var(--accent); border: 0; border-radius: 5px;
+  padding: 8px 14px; cursor: pointer; }
+button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.copied { font: 13px var(--sans); color: var(--muted); margin-left: 10px; }
+.xpost { margin: 0 0 22px; }
+.xpost pre { margin-bottom: 8px; }
+.xpost h3 { font: 600 15px var(--sans); margin: 0 0 8px; }
+.xmedia { display: block; width: 100%; margin-top: 10px; border: 1px solid var(--line); border-radius: 4px; }
+.xpost .row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font: 13px var(--sans); color: var(--muted); }
+.note { font: 14px/1.5 var(--sans); color: var(--muted); margin-top: 14px; }
+.note p { margin: 0 0 8px; }
+.note code { font-size: 13px; background: var(--code); padding: 1px 5px; border-radius: 3px; }
+@media (max-width: 520px) { body { font-size: 17px; } h1 { font-size: 31px; } h2 { font-size: 22px; } figure { margin-inline: 0; } }
+</style>
+
+<nav class="bar" aria-label="Sections">
+  <b>Drafts</b>
+  <a href="#substack">Substack post</a>
+  <a href="#linkedin">LinkedIn post</a>
+  <a href="#x">X posts</a>
+  <a href="https://gavacharles.github.io/uganda-rainy-season-access/">Interactive map</a>
+</nav>
+
+<main>
+  <div class="help"><p>Preview of the Substack draft as it will read. In Substack, paste the text and upload each image from <code>osm_accessibility/posts/images/</code> in its numbered order; the captions and alt text are in <code>substack_post.md</code>.</p></div>
+
+  <article id="substack">
+<!--SUBSTACK-->
+  </article>
+
+  <section class="linkedin" id="linkedin">
+    <h2>LinkedIn post</h2>
+    <p class="meta"><!--LINKEDIN_CHARS--> characters · attach the 32-second map tour video</p>
+    <pre id="li-text"><!--LINKEDIN--></pre>
+    <button type="button" id="copy">Copy LinkedIn text</button><span class="copied" id="copied" aria-live="polite"></span>
+    <div class="note"><!--LINKEDIN_NOTE--></div>
+  </section>
+
+  <section class="linkedin" id="x">
+    <h2>X posts</h2>
+    <p class="meta"><!--X_COUNT--> separate posts, each within 280 characters (links count as 23).</p>
+<!--X_POSTS-->
+    <div class="note"><p>Replace <code>[Substack link]</code> in post 1 once the Substack post is live. The cover image is 1600×900 (16:9), so X shows it uncropped; it also works as the Substack post's cover. The video in post 2 is 32 seconds, well under X's limit.</p></div>
+  </section>
+</main>
+
+<script>
+function copyFrom(pre, msg) {
+  navigator.clipboard.writeText(pre.textContent).then(() => { msg.textContent = "Copied"; }).catch(() => {
+    const r = document.createRange(); r.selectNodeContents(pre);
+    const s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    msg.textContent = "Text selected: press Ctrl+C (or ⌘C) to copy";
+  });
+}
+document.querySelectorAll(".xcopy").forEach(b => b.addEventListener("click", () => {
+  const box = b.closest(".xpost"); copyFrom(box.querySelector("pre"), box.querySelector(".copied"));
+}));
+document.getElementById("copy").addEventListener("click", () => {
+  const pre = document.getElementById("li-text"), msg = document.getElementById("copied");
+  navigator.clipboard.writeText(pre.textContent).then(() => { msg.textContent = "Copied"; }).catch(() => {
+    const r = document.createRange(); r.selectNodeContents(pre);
+    const s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    msg.textContent = "Text selected: press Ctrl+C (or ⌘C) to copy";
+  });
+});
+</script>

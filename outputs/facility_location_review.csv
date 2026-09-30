@@ -1,0 +1,341 @@
+name,facility_type,issue,km_from_named_place,named_place,named_district,lon,lat
+Namwendwa Health Centre IV,Health Centre IV,OSM move of 36 km rejected: already at a place of its name,0.0,NAMWENDWA (parish),KAMULI,33.264,0.928
+Matany Hospital,Hospital,OSM move of 17 km rejected: already at a place of its name,0.0,MATANY (sub-county),NAPAK,34.393,2.4474
+Kyabugimbi Health Centre IV,Health Centre IV,OSM move of 10 km rejected: already at a place of its name,0.0,KYABUGIMBI (sub-county),BUSHENYI,30.251,-0.507
+Bbira Health Centre II,Health Centre II,far from every place of its name,79.5,BBIRA (parish),MUBENDE,32.45,0.333
+Bugoye Health Centre II,Health Centre II,far from every place of its name; outside its recorded region,293.1,BUGOYE (parish),MUKONO,30.1,0.3
+Bukasa Health Centre II,Health Centre II,far from every place of its name,31.9,BUKASA (parish),BUIKWE,32.0120999999999,0.3382
+Bukasa Health Centre IV,Health Centre IV,far from every place of its name,78.3,BUKASA (parish),BUIKWE,32.5,-0.4333
+Bukoto Health Centre III,Health Centre III,far from every place of its name,134.3,BUKOTO I (parish),KAMPALA,31.6316999999999,-0.3958
+Bulawula Health Centre II,Health Centre II,far from every place of its name,169.1,BULAWULA (parish),KALUNGU,32.9581,0.8409
+Butende Health Centre III,Health Centre III,far from every place of its name,36.1,BUTENDE (parish),BUTAMBALA,31.7238,-0.286
+Buwooya Health Centre II,Health Centre II,far from every place of its name; outside its recorded region,44.4,BUWOOYA (parish),BUVUMA,33.612,0.6413
+Buyamba Health Centre II,Health Centre II,far from every place of its name,245.7,BUYAMBA (parish),RAKAI,32.173,1.457
+Buyanja Health Centre II,Health Centre II,far from every place of its name,64.3,BUYANJA (parish),LYANTONDE,31.6313999999999,0.2264
+Buyanja Health Centre II,Health Centre II,far from every place of its name,53.8,BUYANJA (parish),LYANTONDE,31.2917999999999,0.3928
+Bweyongedde Health Centre II,Health Centre II,far from every place of its name,19.5,BWEYONGEDDE (parish),MUBENDE,31.8099999999999,0.551
+Ddungi Health Centre II,Health Centre II,far from every place of its name,45.9,DDUNGI (parish),BUIKWE,32.6004,0.3139
+Ggolo Health Centre III,Health Centre III,far from every place of its name,27.5,GGOLO (parish),MPIGI,32.2265999999999,0.1351
+Kabale Health Centre II,Health Centre II,far from every place of its name,127.7,KABALE (parish),WAKISO,31.3897,-0.3099
+Kabbo Health Centre II,Health Centre II,far from every place of its name,30.0,KABBO (parish),MUBENDE,31.3935999999999,0.5537
+Kakoola Health Centre II,Health Centre II,far from every place of its name,111.3,KAKOOLA (parish),MPIGI,32.6477999999999,1.2348
+Kakoola Health Centre III,Health Centre III,far from every place of its name,111.3,KAKOOLA (parish),MPIGI,32.6477999999999,1.2348
+Kalagala Health Centre II,Health Centre II,far from every place of its name,24.1,KALAGALA (parish),MASAKA,33.0167,0.25
+Kalama Health Centre II,Health Centre II,far from every place of its name,38.1,KALAMA (parish),MITYANA,32.177,0.303
+Kalungi Health Centre III,Health Centre III,far from every place of its name,81.8,KALUNGI (parish),RAKAI,31.8129999999999,-0.194
+Kamira Health Centre III,Health Centre III,far from every place of its name,11.6,KAMIRA (parish),LUWERO,32.6092,0.6879
+Kamunina Health Centre II,Health Centre II,far from every place of its name,57.3,KAMUNINA (parish),NAKASONGOLA,32.1833,1.6166
+Kanseera Health Centre II,Health Centre II,far from every place of its name,25.1,KANSEERA (parish),MUBENDE,31.6666999999999,0.5833
+Kasambya Health Centre II,Health Centre II,far from every place of its name,16.3,KASAMBYA (parish),SSEMBABULE,31.3485,0.2509
+Kasambya Health Centre III,Health Centre III,far from every place of its name,33.4,KASAMBYA (parish),SSEMBABULE,31.71,-0.014
+Kasejjere Health Centre II,Health Centre II,far from every place of its name,25.4,KASEJJERE (parish),KYANKWANZI,31.858,0.8665
+Kasensero Health Centre II,Health Centre II,far from every place of its name,41.3,KASENSERO (parish),RAKAI,31.7634,-0.9136
+Kasubi Health Centre III,Health Centre III,far from every place of its name,45.4,KASUBI (parish),KAMPALA,32.9677999999999,0.2972
+Katatenga Health Centre II,Health Centre II,far from every place of its name,22.6,KATATENGA (parish),RAKAI,31.3874999999999,-0.6532
+Katuugo Health Centre II,Health Centre II,far from every place of its name,12.1,KATUUGO (parish),KYANKWANZI,32.6499999999999,1.1
+Katwe Health Centre III,Health Centre III,far from every place of its name,80.7,KATWE I (parish),KAMPALA,32.0309999999999,0.788
+Kavule Health Centre II,Health Centre II,far from every place of its name,63.8,KAVULE (parish),KAYUNGA,32.942,0.096
+Kawoko Health Centre III,Health Centre III,far from every place of its name,20.2,KAWOKO (parish),BUKOMANSIMBI,31.6269999999999,0.0224
+Kawongo Health Centre III,Health Centre III,far from every place of its name,88.4,KAWONGO (parish),MUKONO,32.7616999999999,1.3558
+Kibaale Health Centre II,Health Centre II,far from every place of its name,161.5,KIBAALE (parish),MITYANA,31.3486,-0.7777
+Kibengo Health Centre II,Health Centre II,far from every place of its name,139.2,KIBENGO (parish),LUWERO,32.1499999999999,-0.3
+Kibengo Health Centre III,Health Centre III,far from every place of its name; outside its recorded region,277.0,KIBENGO (parish),LUWERO,30.8829999999999,-0.866
+Kikandwa Health Centre II,Health Centre II,far from every place of its name,17.4,KIKANDWA (parish),MITYANA,32.45,0.6833
+Kikoma Health Centre II,Health Centre II,far from every place of its name,40.0,KIKOMA (parish),KYANKWANZI,31.4166999999999,0.75
+Kimwanyi Health Centre II,Health Centre II,far from every place of its name,104.9,KIMWANYI (parish),WAKISO,31.6862999999999,0.4463
+Kimwanyi Health Centre III,Health Centre III,far from every place of its name,104.9,KIMWANYI (parish),WAKISO,31.6862999999999,0.4463
+Kinoni Health Centre III,Health Centre III,far from every place of its name,83.2,KINONI (parish),BUIKWE,31.55,-0.35
+Kirinda Health Centre II,Health Centre II,far from every place of its name,117.9,KIRINDA (parish),NAKASEKE,31.5518,-0.0072
+Kirumba Health Centre II,Health Centre II,far from every place of its name,17.3,KIRUMBA (sub-county),KYOTERA,31.7319999999999,-0.306
+Kirumba Health Centre III,Health Centre III,far from every place of its name,51.2,KIRUMBA (sub-county),KYOTERA,31.2666,-0.9
+Kiryanongo Health Centre II,Health Centre II,far from every place of its name,32.9,KIRYANONGO (parish),KYANKWANZI,31.5898,0.9862
+Kisojjo Health Centre II,Health Centre II,far from every place of its name; outside its recorded region,134.8,KISOJJO (parish),BUKOMANSIMBI,30.7333,0.5333
+Kitaasa Health Centre III,Health Centre III,far from every place of its name,70.5,KITAASA (parish),RAKAI,31.5705999999999,-0.0961
+Kitanda Health Centre III,Health Centre III,far from every place of its name,99.4,KITANDA (sub-county),BUKOMANSIMBI,32.4977999999999,0.0919
+Kiteredde Health Centre II,Health Centre II,far from every place of its name,31.2,KITEREDDE (parish),KAYUNGA,31.5667,-0.6167
+Kitwe Health Centre II,Health Centre II,far from every place of its name,150.7,KITWE (parish),KAYUNGA,31.5958,0.3144
+Kiyuni Health Centre III,Health Centre III,far from every place of its name,170.1,KIYUNI (parish),KYANKWANZI,32.932,0.417
+Kiziba Health Centre III,Health Centre III,far from every place of its name,45.2,KIZIBA (parish),LUWERO,32.3579999999999,0.51
+Kyakasa Health Centre II,Health Centre II,far from every place of its name,34.3,KYAKASA (parish),MUBENDE,31.3936999999999,0.5573
+Kyengeza Health Centre II,Health Centre II,far from every place of its name,132.0,KYENGEZA (parish),KYOTERA,32.3147,0.4978
+Kyetume Health Centre III,Health Centre III,far from every place of its name,123.7,KYETUME (parish),LUWERO,31.395,-0.422
+Lubbe Health Centre II,Health Centre II,far from every place of its name,25.2,LUBBE (parish),WAKISO,32.5240999999999,0.2864
+Lugo Health Centre III,Health Centre III,far from every place of its name,23.6,LUGO (parish),WAKISO,32.5125,0.7681
+Lwemiyaga Health Centre III,Health Centre III,far from every place of its name; outside its recorded region,146.9,LWEMIYAGA (sub-county),SSEMBABULE,29.859,-0.653
+Makonzi Health Centre II,Health Centre II,far from every place of its name,83.6,MAKONZI (parish),MASAKA,31.8333,0.5833
+Makoole Health Centre II,Health Centre II,far from every place of its name; outside its recorded region,182.7,MAKOOLE (parish),SSEMBABULE,29.9198999999999,-0.9589
+Mazzi Health Centre II,Health Centre II,far from every place of its name,19.2,MAZZI (parish),LUWERO,32.6088,0.8092
+Mirambi Health Centre III,Health Centre III,far from every place of its name,42.6,MIRAMBI (parish),BUKOMANSIMBI,31.7333,0.1
+Miseebe Health Centre II,Health Centre II,far from every place of its name,17.1,MISEEBE (parish),MITYANA,32.1702999999999,0.4916
+Mitima Health Centre II,Health Centre II,far from every place of its name,10.1,MITIMA (parish),SSEMBABULE,31.25,0.1167
+Mulajje Health Centre II,Health Centre II,far from every place of its name,57.3,MULAJJE (parish),BUIKWE,32.6203999999999,0.6978
+Musozi Health Centre III,Health Centre III,far from every place of its name,14.4,MUSOZI (parish),MUBENDE,31.762,0.32
+Nabigasa Health Centre III,Health Centre III,far from every place of its name,32.6,NABIGASA (parish),KYOTERA,31.4356,-0.8986
+Nabutongwa Health Centre III,Health Centre III,far from every place of its name,65.7,NABUTONGWA (parish),KALUNGU,31.1319,-0.0167
+Nakaseeta Health Centre II,Health Centre II,far from every place of its name,11.1,NAKASEETA (parish),MITYANA,32.0966,0.5583
+Namalere Health Centre II,Health Centre II,far from every place of its name,106.0,NAMALERE (parish),KAYUNGA,32.5619999999999,0.419
+Namiringa Health Centre II,Health Centre II,far from every place of its name,45.9,NAMIRINGA (parish),MUBENDE,31.8557999999999,0.9867
+Namiti Health Centre II,Health Centre II,far from every place of its name,20.7,NAMITI (parish),BUVUMA,33.3678999999999,0.2333
+Ndejje Health Centre II,Health Centre II,far from every place of its name,39.9,NDEJJE (parish),WAKISO,32.4765,0.6088
+Nkandwa Health Centre II,Health Centre II,far from every place of its name,32.2,NKANDWA (parish),KIBOGA,31.8249999999999,0.4882
+Seeta Health Centre II,Health Centre II,far from every place of its name,122.2,SEETA WARD (parish),MUKONO,31.6905,0.8117
+Ssambwe Health Centre II,Health Centre II,far from every place of its name,69.5,SSAMBWE (parish),LUWERO,31.9760999999999,0.1877
+Aakum Health Centre II,Health Centre II,far from every place of its name,52.3,AAKUM (parish),KATAKWI,33.8999999999999,1.4667
+Agonga Health Centre II,Health Centre II,far from every place of its name; outside its recorded region,174.6,AGONGA (parish),AMURIA,33.0178999999999,3.8028
+Akoboi Health Centre II,Health Centre II,far from every place of its name,63.7,AKOBOI (parish),SERERE,33.9491,1.8541
+Amonikakinei Health Centre II,Health Centre II,far from every place of its name,26.1,AMONIKAKINEI (parish),BUSIA,34.0197999999999,0.3245
+Apapai Health Centre IV,Health Centre IV,far from every place of its name,37.8,APAPAI (parish),KABERAMAIDO,33.2909999999999,1.53
+Bubago Health Centre II,Health Centre II,far from every place of its name,56.6,BUBAGO (parish),NAMUTUMBA,33.0919,0.7265
+Buboolo Health Centre II,Health Centre II,far from every place of its name,24.4,BUBOOLO (parish),SIRONKO,34.2727,0.9482
+Bubungi Health Centre II,Health Centre II,far from every place of its name; outside its recorded region,178.4,BUBUNGI (parish),BUDUDA,32.8999999999999,0.3
+Budhaya Health Centre II,Health Centre II,far from every place of its name; outside its recorded region,92.0,BUDHAYA (parish),BUGIRI,32.942,0.096
+Buduma Health Centre II,Health Centre II,far from every place of its name,38.0,BUDUMA (parish),NAMAYINGO,33.9061,0.5164
+Bufuma Health Centre III,Health Centre III,far from every place of its name; outside its recorded region,172.8,BUFUMA (parish),BUDUDA,32.9354999999999,0.3674
+Bunagami Health Centre III,Health Centre III,far from every place of its name,12.6,BUNAGAMI (parish),SIRONKO,34.3881999999999,1.2018
+Buwaya Health Centre II,Health Centre II,far from every place of its name,112.0,BUWAYA (parish),MANAFWA,33.5167,0.25
+Buwongo Health Centre II,Health Centre II,far from every place of its name,18.3,BUWONGO (parish),NAMAYINGO,33.4956999999999,0.6503
+Buwoya Health Centre II,Health Centre II,far from every place of its name,90.0,BUWOYA (parish),NAMAYINGO,33.2387999999999,0.8117
+Bwase Health Centre II,Health Centre II,far from every place of its name,95.0,BWASE (parish),BUDAKA,33.158,0.654
+Gombe Health Centre II,Health Centre II,far from every place of its name; outside its recorded region,221.4,GOMBE (parish),BULAMBULI,32.4816,0.513
+Igombe Health Centre III,Health Centre III,far from every place of its name,40.3,IGOMBE (parish),IGANGA,33.1865,0.6279
+Kanyenya Health Centre II,Health Centre II,far from every place of its name; outside its recorded region,222.7,KANYENYA (parish),BUTALEJA,32.183,0.318
+Kasokwe Health Centre II,Health Centre II,far from every place of its name,41.5,KASOKWE (parish),KALIRO,33.8149,0.6405
+Kasokwe Health Centre II,Health Centre II,far from every place of its name,41.5,KASOKWE (parish),KALIRO,33.8149,0.6405
+Kasolwe Health Centre II,Health Centre II,far from every place of its name,34.9,KASOLWE (parish),KAMULI,33.2327999999999,0.7813
+Kigulu Health Centre II,Health Centre II,far from every place of its name,27.2,KIGULU (parish),MAYUGE,33.8325,0.5947
+Kiroba Health Centre II,Health Centre II,far from every place of its name,29.3,KIROBA (parish),LUUKA,33.1293999999999,0.8503
+Kitovu Health Centre II,Health Centre II,far from every place of its name,10.1,KITOVU (parish),MAYUGE,33.4333,0.45
+Lolwe Health Centre II,Health Centre II,far from every place of its name,15.0,LOLWE EAST (parish),NAMAYINGO,33.7929,0.1178
+Lwanda Health Centre II,Health Centre II,far from every place of its name,26.4,LWANDA (parish),LUUKA,33.2209999999999,0.528
+Mawoito Health Centre II,Health Centre II,far from every place of its name,14.9,MAWOITO (parish),JINJA,33.1328,0.6542
+Mpungwe Health Centre II,Health Centre II,far from every place of its name,37.3,MPUNGWE (sub-county),MAYUGE,33.2049999999999,0.645
+Namaira Health Centre II,Health Centre II,far from every place of its name,19.6,NAMAIRA (parish),KAMULI,33.1394,0.8262
+Namusita Health Centre II,Health Centre II,far from every place of its name,39.3,NAMUSITA (parish),BUDAKA,33.618,1.0109
+Namwendwa Health Centre II,Health Centre II,far from every place of its name,27.3,NAMWENDWA (parish),KAMULI,33.1319999999999,0.63
+Nawampiti Health Centre II,Health Centre II,far from every place of its name,51.4,NAWAMPITI (parish),LUUKA,33.4333,1.2
+Nawangisa Health Centre II,Health Centre II,far from every place of its name,10.7,NAWANGISA (parish),NAMUTUMBA,33.584,0.7256
+Nawansega Health Centre III,Health Centre III,far from every place of its name,33.9,NAWANSEGA (parish),IGANGA,33.317,0.917
+Nawanyago Health Centre II,Health Centre II,far from every place of its name,25.3,NAWANYAGO (parish),LUUKA,33.3093999999999,0.9382
+Nawanyago Health Centre II,Health Centre II,far from every place of its name,25.3,NAWANYAGO (parish),LUUKA,33.3093999999999,0.9382
+Naweyo Health Centre III,Health Centre III,far from every place of its name,11.1,NAWEYO (parish),BUTALEJA,33.9333,1.0167
+Obule C. B Health Centre II,Health Centre II,far from every place of its name,34.8,OBULE (parish),SOROTI,33.5499999999999,1.9667
+Omagoro Health Centre II,Health Centre II,far from every place of its name,19.8,OMAGORO (parish),SERERE,33.465,1.451
+Sagitu Health Centre II,Health Centre II,far from every place of its name,24.6,SAGITU (parish),MAYUGE,33.5977999999999,0.2212
+Simu Pondo Health Centre II,Health Centre II,far from every place of its name,13.7,SIMU PONDO (parish),SIRONKO,34.2595,1.1476
+Wandago Health Centre II,Health Centre II,far from every place of its name,56.1,WANDAGO (parish),MAYUGE,33.2862,1.0047
+Were Health Centre II,Health Centre II,far from every place of its name,73.3,WERE (parish),KAPCHORWA,34.0095,0.7444
+Adea Health Centre II,Health Centre II,far from every place of its name; outside its recorded region,30.6,ADEA (parish),ABIM,33.7329,2.1852
+Adilang Health Centre III,Health Centre III,far from every place of its name,26.6,ADILANG (sub-county),AGAGO,33.1946,2.9281
+Akura Health Centre II,Health Centre II,far from every place of its name,172.0,AKURA (parish),ALEBTONG,31.7587,3.1762
+Alangi Health Centre III,Health Centre III,far from every place of its name,271.3,ALANGI (parish),ALEBTONG,30.823,2.578
+Alenga Health Centre III,Health Centre III,far from every place of its name,88.9,ALENGA (parish),DOKOLO,32.3498999999999,1.8514
+Alere Health Centre II,Health Centre II,far from every place of its name,351.1,ALERE (parish),ADJUMANI,34.7858999999999,2.4634
+Alerek Health Centre III,Health Centre III,far from every place of its name,183.5,ALEREK (sub-county),ABIM,31.9264,2.7832
+Amuda Health Centre II,Health Centre II,far from every place of its name,176.3,AMUDA (parish),DOKOLO,34.6,2.2
+Amunga Health Centre II,Health Centre II,far from every place of its name,39.7,AMUNGA (parish),OTUKE,33.1663,2.5248
+Arra Health Centre II,Health Centre II,far from every place of its name,14.1,ARRA (parish),MOYO,31.8019,3.5226
+Atunga Health Centre II,Health Centre II,far from every place of its name,21.5,ATUNGA (parish),ABIM,33.6165999999999,2.5333
+Ayaka Health Centre II,Health Centre II,far from every place of its name,16.7,AYAKA (parish),ZOMBO,30.9332999999999,2.5833
+Bardege Health Centre III,Health Centre III,far from every place of its name,119.7,BARDEGE (parish),DOKOLO,32.2927,2.7977
+Bondo Health Centre III,Health Centre III,far from every place of its name,27.2,BONDO (parish),ARUA,30.9959999999999,2.831
+Bung Health Centre II,Health Centre II,far from every place of its name,36.1,BUNG (parish),APAC,32.75,2.287
+Dure Health Centre II,Health Centre II,far from every place of its name,15.4,DURE (parish),PADER,32.7665999999999,3.2
+Kal Alii Health Centre II,Health Centre II,far from every place of its name,17.3,KAL ALII (parish),GULU,32.2959,2.9841
+Kangole Health Centre III,Health Centre III,far from every place of its name,143.4,KANGOLE (parish),KABONG,34.488,2.4412
+Kocholo Health Centre II,Health Centre II,far from every place of its name,23.6,KOCHOLO (parish),KABONG,33.8982999999999,3.7704
+Lokori Health Centre II,Health Centre II,far from every place of its name; outside its recorded region,296.2,LOKORI (parish),KABONG,33.6405,0.9282
+Morulem Health Centre II,Health Centre II,far from every place of its name,16.8,MORULEM (parish),KABONG,34.0833,3.7167
+Nakwakwa Health Centre II,Health Centre II,far from every place of its name,14.2,NAKWAKWA (parish),KOTIDO,34.1009999999999,3.151
+Ogom Health Centre III,Health Centre III,far from every place of its name,44.4,OGOM WARD (parish),NWOYA,32.6167,2.9833
+Omee 1 Health Centre II,Health Centre II,far from every place of its name,182.6,OMEE (parish),ALEBTONG,31.7704999999999,2.8556
+Opeta Health Centre III,Health Centre III,far from every place of its name,41.5,OPETA (parish),KOLE,32.3708,2.2134
+Opopongo Health Centre II,Health Centre II,far from every place of its name,21.7,OPOPONGO (parish),ABIM,33.7246,2.8179
+Oreta Health Centre II,Health Centre II,far from every place of its name,32.6,ORETA (parish),ABIM,33.6790999999999,2.7495
+Orivu Health Centre III,Health Centre III,far from every place of its name,33.4,ORIVU (parish),ARUA,30.9857,3.0303
+Otong Health Centre II,Health Centre II,far from every place of its name,91.2,OTONG (parish),PADER,32.1942999999999,3.0182
+Otumpili Health Centre II,Health Centre II,far from every place of its name,26.7,OTUMPILI (parish),AGAGO,33.2152,2.5985
+Parabongo Health Centre II,Health Centre II,far from every place of its name,118.5,PARABONGO (sub-county),AGAGO,32.1520999999999,2.9122
+Pupu Kamuya Health Centre II,Health Centre II,far from every place of its name,80.9,PUPU-KAMUYA (parish),ABIM,34.6167,2.5833
+Ramogi Health Centre II,Health Centre II,far from every place of its name,129.5,RAMOGI (parish),NEBBI,31.7486,3.646
+Tekulu Health Centre II,Health Centre II,far from every place of its name,77.2,TEKULU (parish),ALEBTONG,32.4256999999999,2.4907
+Timu Health Centre II,Health Centre II,far from every place of its name,44.5,TIMU (parish),KABONG,33.9778999999999,3.3576
+Wilela Health Centre II,Health Centre II,far from every place of its name,11.9,WILELA (parish),ABIM,33.7267,2.7979
+Bihanga Health Centre III,Health Centre III,far from every place of its name,130.8,BIHANGA (parish),IBANDA,29.6666999999999,-1.2833
+Bikungu Health Centre II,Health Centre II,far from every place of its name,13.5,BIKUNGU (parish),MITOOMA,29.9843,-0.8012
+Burora Health Centre II,Health Centre II,far from every place of its name,19.9,BURORA (parish),KAGADI,29.8434999999999,-0.9227
+Butare Health Centre II,Health Centre II,far from every place of its name,51.7,BUTARE (parish),RUKIGA,30.4011,-0.3264
+Butare Health Centre III,Health Centre III,far from every place of its name,48.4,BUTARE (parish),RUKIGA,30.4422,-0.3802
+Ihunga Health Centre II,Health Centre II,far from every place of its name,29.5,IHUNGA (parish),ISINGIRO,29.782,-1.139
+Ikamiro Health Centre II,Health Centre II,far from every place of its name,11.4,IKAMIRO (parish),RUBANDA,29.7333,-1.1667
+Irimya Health Centre II,Health Centre II,far from every place of its name,216.6,IRIMYA (parish),IBANDA,31.4734,1.4455
+Iterero Health Centre II,Health Centre II,far from every place of its name,31.5,ITERERO (parish),NTUNGAMO,30.3248,-0.9793
+Kabira Health Centre III,Health Centre III,far from every place of its name,20.3,KABIRA (sub-county),MITOOMA,30.1874,-0.5421
+Kabuga Health Centre II,Health Centre II,far from every place of its name,42.7,KABUGA (parish),KANUNGU,29.9666999999999,-1.0167
+Kabuga Health Centre III,Health Centre III,far from every place of its name,130.2,KABUGA (parish),KANUNGU,30.501,0.184
+Kagaaga Health Centre II,Health Centre II,far from every place of its name,40.0,KAGAAGA (parish),ISINGIRO,31.1816999999999,-0.9581
+Kagezi Health Centre III,Health Centre III,far from every place of its name,53.2,KAGEZI (parish),KISORO,30.1332999999999,-0.9167
+Kagongi Health Centre III,Health Centre III,far from every place of its name,33.5,KAGONGI (parish),NTUNGAMO,30.6,-0.6
+Kahangi Health Centre II,Health Centre II,far from every place of its name,35.2,KAHANGI (parish),KABAROLE,30.5167,0.3667
+Kakamba Health Centre II,Health Centre II,far from every place of its name,91.1,KAKAMBA (parish),ISINGIRO,29.9670999999999,-0.7464
+Kakanju Health Centre II,Health Centre II,far from every place of its name,29.9,KAKANJU (parish),BUSHENYI,30.4499999999999,-0.283
+Kakinga Health Centre II,Health Centre II,far from every place of its name,17.4,KAKINGA (parish),RUKUNGIRI,30.6332999999999,0.2
+Kakoma Health Centre III,Health Centre III,far from every place of its name,17.0,KAKOMA (parish),MBARARA,30.6968,-0.7156
+Karama Health Centre II,Health Centre II,far from every place of its name; outside its recorded region,151.9,KARAMA (parish),ISINGIRO,32.56,0.3198
+Karungu Health Centre III,Health Centre III,far from every place of its name,311.4,KARUNGU (parish),BUHWEJU,32.1,1.9833
+Kasongoire Health Centre II,Health Centre II,far from every place of its name; outside its recorded region,204.3,KASONGOIRE (parish),MASINDI,33.1107,0.5465
+Kataraza Health Centre III,Health Centre III,far from every place of its name,65.5,KATARAZA (parish),KIRUHURA,30.834,0.8022
+Katungu Health Centre II,Health Centre II,far from every place of its name,45.7,KATUNGU (parish),KANUNGU,30.1372,-0.5519
+Katunguru Health Centre II,Health Centre II,far from every place of its name; outside its recorded region,390.2,KATUNGURU (parish),KASESE,33.7072999999999,-0.1421
+Kayenje Health Centre II,Health Centre II,far from every place of its name,106.6,KAYENJE (parish),IBANDA,30.044,0.694
+Kazinga Health Centre II,Health Centre II,far from every place of its name,37.6,KAZINGA (parish),RUBIRIZI,29.7333,-0.6
+Kazinga Health Centre III,Health Centre III,far from every place of its name,110.0,KAZINGA (parish),RUBIRIZI,30.8333,0.2667
+Kibare Health Centre II,Health Centre II,far from every place of its name,52.8,KIBARE (parish),MITOOMA,30.4089999999999,-0.793
+Kiburara Health Centre II,Health Centre II,far from every place of its name,91.0,KIBURARA (parish),KABAROLE,29.8914,0.0112
+Kibuzigye Health Centre II,Health Centre II,far from every place of its name,62.3,KIBUZIGYE (parish),RUBANDA,29.9819999999999,-0.617
+Kichwamba Health Centre II,Health Centre II,far from every place of its name,76.4,KICHWAMBA (parish),RUBIRIZI,30.6145999999999,-0.7298
+Kigaaga Health Centre II,Health Centre II,far from every place of its name,40.4,KIGAAGA (parish),MBARARA,30.282,-1.083
+Kigando Health Centre II,Health Centre II,far from every place of its name; outside its recorded region,126.7,KIGANDO (parish),KIRUHURA,31.5056,1.1711
+Kigarama Health Centre II,Health Centre II,far from every place of its name,74.0,KIGARAMA (parish),IBANDA,29.9497,-1.3856
+Kihanga Health Centre III,Health Centre III,far from every place of its name,40.4,KIHANGA (parish),NTUNGAMO,30.038,-1.169
+Kikagate Health Centre III,Health Centre III,far from every place of its name,12.9,KIKAGATE (parish),ISINGIRO,30.7678,-0.7908
+Kinoni Health Centre IV,Health Centre IV,far from every place of its name,37.4,KINONI (parish),KAMWENGE,30.4939,-0.7011
+Kirambi Health Centre II,Health Centre II,far from every place of its name,158.9,KIRAMBI (parish),BUNDIBUGYO,30.0307999999999,-0.6532
+Kirasa Health Centre II,Health Centre II,far from every place of its name,106.7,KIRASA (parish),KIBAALE,31.7335999999999,1.679
+Kisasa Health Centre II,Health Centre II,far from every place of its name,146.7,KISASA (parish),KASESE,30.0167,-1.3833
+Kishenyi Health Centre II,Health Centre II,far from every place of its name,65.3,KISHENYI (parish),KANUNGU,29.922,-0.241
+Kisiizi Health Centre II,Health Centre II,far from every place of its name,49.7,KISIIZI (parish),RUKUNGIRI,29.9592999999999,-0.5166
+Kisojo Health Centre II,Health Centre II,far from every place of its name,54.4,KISOJO (parish),KIBAALE,30.1131999999999,0.2869
+Kitojo Health Centre II,Health Centre II,far from every place of its name,10.1,KITOJO (parish),BUSHENYI,29.9559,-1.0665
+Kiyanja Health Centre II,Health Centre II,far from every place of its name; outside its recorded region,301.3,KIYANJA (parish),BUHWEJU,33.7509999999999,0.233
+Kiziba Health Centre II,Health Centre II,far from every place of its name,44.8,KIZIBA (parish),SHEEMA,30.1,-1.2833
+Kyeizooba Health Centre III,Health Centre III,far from every place of its name,16.9,KYEIZOOBA (sub-county),BUSHENYI,30.1,-0.45
+Malere Health Centre II,Health Centre II,far from every place of its name; outside its recorded region,374.2,MALERE (parish),KAMWENGE,34.0489999999999,1.451
+Mitooma Health Centre II,Health Centre II,far from every place of its name,24.2,MITOOMA (sub-county),MITOOMA,29.934,-0.962
+Mpara Health Centre III,Health Centre III,far from every place of its name,47.0,MPARA (sub-county),KYEGEGWA,30.4833,0.4667
+Mpasaana Health Centre III,Health Centre III,far from every place of its name,11.7,MPASAANA (parish),KAKUMIRO,31.405,0.872
+Mpeefu A Health Centre II,Health Centre II,far from every place of its name,66.3,MPEEFU (sub-county),KAGADI,30.3318,0.5025
+Mpeefu B Health Centre III,Health Centre III,far from every place of its name,68.8,MPEEFU (sub-county),KAGADI,30.3039999999999,0.494
+Murama Health Centre II,Health Centre II,far from every place of its name,21.0,MURAMA (parish),RUKUNGIRI,29.9833,-0.7333
+Murama Health Centre II,Health Centre II,far from every place of its name,21.0,MURAMA (parish),RUKUNGIRI,29.9833,-0.7333
+Mushasha Health Centre II,Health Centre II,far from every place of its name,74.8,MUSHASHA (parish),BUHWEJU,30.3261,-0.9703
+Mweya Health Centre II,Health Centre II,far from every place of its name,20.4,MWEYA (parish),KASESE,29.8985999999999,0.1925
+Nkongoro Health Centre II,Health Centre II,far from every place of its name,90.7,NKONGORO (parish),KIRUHURA,30.132,-0.885
+Nombe Health Centre II,Health Centre II,far from every place of its name,77.3,NOMBE I (parish),KIRUHURA,30.1499999999999,-0.8
+Ntungamo Health Centre II,Health Centre II,far from every place of its name,24.2,NTUNGAMO (parish),BUSHENYI,29.6563,-0.8507
+Ntungu Health Centre II,Health Centre II,far from every place of its name,158.5,NTUNGU (parish),ISINGIRO,30.2979999999999,0.568
+Nyabiteete Health Centre II,Health Centre II,far from every place of its name,13.8,NYABITEETE (parish),RUKUNGIRI,29.9166999999999,-0.85
+Nyabubare Health Centre III,Health Centre III,far from every place of its name,17.2,NYABUBARE (parish),ISINGIRO,30.055,-0.543
+Nyakarambi Health Centre II,Health Centre II,far from every place of its name,73.4,NYAKARAMBI (parish),ISINGIRO,30.0667,-1.166
+Nyakariro Health Centre II,Health Centre II,far from every place of its name,50.6,NYAKARIRO (parish),NTUNGAMO,29.8472,-0.7622
+Nyakazinga Health Centre II,Health Centre II,far from every place of its name,107.9,NYAKAZINGA (parish),KASESE,30.0352999999999,-0.7902
+Nyamabare Health Centre II,Health Centre II,far from every place of its name,103.7,NYAMABARE (parish),RUBIRIZI,29.85,-1.1
+Nyamarebe Health Centre III,Health Centre III,far from every place of its name,11.8,NYAMAREBE (sub-county),IBANDA,30.5295999999999,-0.0797
+Nyamigisa Health Centre II,Health Centre II,far from every place of its name,111.6,NYAMIGISA (parish),KAGADI,31.7125999999999,1.6636
+Nyamiyaga Health Centre II,Health Centre II,far from every place of its name,19.2,NYAMIYAGA (parish),BUSHENYI,30.1,-0.45
+Rubaya Health Centre II,Health Centre II,far from every place of its name,27.4,RUBAYA (sub-county),MBARARA,30.471,-0.222
+Rubingo Health Centre II,Health Centre II,far from every place of its name,52.3,RUBINGO (parish),KABAROLE,30.181,-0.767
+Rugarama Health Centre III,Health Centre III,far from every place of its name,11.6,RUGARAMA (parish),SHEEMA,30.2392,-0.9581
+Rugarama Hospital,Hospital,far from every place of its name,17.6,RUGARAMA (parish),SHEEMA,29.975,-1.237
+Ruhoko Health Centre IV,Health Centre IV,far from every place of its name,77.7,RUHOKO (parish),KYENJOJO,30.478,-0.155
+Rukararwe Health Centre II,Health Centre II,far from every place of its name,14.3,RUKARARWE (parish),MITOOMA,30.1945,-0.5171
+Rukunyu Health Centre IV,Health Centre IV,far from every place of its name,114.0,RUKUNYU (parish),KAKUMIRO,30.4639999999999,0.281
+Rushambya Health Centre II,Health Centre II,far from every place of its name,44.3,RUSHAMBYA (parish),BUHWEJU,30.5333,-0.75
+Rushasha Health Centre III,Health Centre III,far from every place of its name,50.4,RUSHASHA (parish),RUKUNGIRI,30.5169999999999,-0.583
+Rushinya Health Centre II,Health Centre II,far from every place of its name,64.9,RUSHINYA (parish),BUSHENYI,30.1819999999999,-1.1
+Rushoroza Health Centre IV,Health Centre IV,far from every place of its name,68.9,RUSHOROZA (parish),KANUNGU,29.9833,-1.2833
+Ruteete Health Centre II,Health Centre II,far from every place of its name,128.4,RUTEETE (parish),ISINGIRO,29.8678999999999,-0.7868
+Rutoma Health Centre II,Health Centre II,far from every place of its name,127.9,RUTOMA (parish),KABAROLE,30.2793999999999,-0.6623
+Ruyonza Health Centre II,Health Centre II,far from every place of its name,15.4,RUYONZA (parish),IBANDA,29.9833,-0.8166
+Rwengwe Health Centre II,Health Centre II,far from every place of its name,34.3,RWENGWE (parish),IBANDA,30.8999999999999,-0.1333
+Rwenkobwa Health Centre III,Health Centre III,far from every place of its name,110.2,RWENKOBWA (parish),IBANDA,31.1167,-0.7333
+Rwenshama Health Centre III,Health Centre III,far from every place of its name,12.4,RWENSHAMA (parish),KAMWENGE,30.5167,-0.6333
+Rwerere Health Centre II,Health Centre II,far from every place of its name,15.2,RWERERE (parish),RUKUNGIRI,29.937,-0.681
+Rwoburunga Health Centre III,Health Centre III,far from every place of its name,44.4,RWOBURUNGA (parish),MITOOMA,29.6514999999999,-0.7192
+Rwobuzizi Health Centre II,Health Centre II,far from every place of its name,56.5,RWOBUZIZI (parish),IBANDA,31.0829999999999,-0.117
+All Saints Clinic,Clinic,no coordinates; dropped,,,,0.0,0.0
+Butakira Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Buyambi/St. Noah Buyambi Health Centre III,Health Centre III,no coordinates; dropped,,,,0.0,0.0
+Church Of God Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Community Medical Centre Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Equator Health Services Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Kachanga Island Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Kamutuuza (Well Spring) Health Centre III,Health Centre III,no coordinates; dropped,,,,0.0,0.0
+Kasooka Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Kisaala Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Kyempewo Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Kyera Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Maria Assumpta Health Centre III,Health Centre III,no coordinates; dropped,,,,0.0,0.0
+Namutamba Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Nanywa Health Centre III,Health Centre III,no coordinates; dropped,,,,0.0,0.0
+Ngeye Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Oliver Tambo Health Centre III,Health Centre III,no coordinates; dropped,,,,0.0,0.0
+Queen Of Apostles Health Centre III,Health Centre III,no coordinates; dropped,,,,0.0,0.0
+Rakai Kiziba (DHIS2) Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Rapha Medical Health Centre III,Health Centre III,no coordinates; dropped,,,,0.0,0.0
+Savio Medical Centre Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Shanti Uganda Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+St. Aloysius Ngobya Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+St. Faustina Health Centre III,Health Centre III,no coordinates; dropped,,,,0.0,0.0
+St. Gyavira Dom Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+St. Jude Kaswa Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+St. Magdalene Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Thereza Ledochowska Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Walter Clinic,Clinic,no coordinates; dropped,,,,0.0,0.0
+AIC Jinja Main Branch Clinic,Clinic,no coordinates; dropped,,,,0.0,0.0
+Alsaints Buchanagandi Health Centre III,Health Centre III,no coordinates; dropped,,,,0.0,0.0
+Bethany Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Budenge Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Bugudoi Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Bukiende Health Centre III,Health Centre III,no coordinates; dropped,,,,0.0,0.0
+Buwakhanywinywi Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Family Hope Centre Jinja Clinic,Clinic,no coordinates; dropped,,,,0.0,0.0
+Jinja International Medical Clinic,Clinic,no coordinates; dropped,,,,0.0,0.0
+Kaffi Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Kisaasi Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Lunar Cdf Health Centre III,Health Centre III,no coordinates; dropped,,,,0.0,0.0
+Mawanga C. O. G Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Mobashar Medical Centre Formerly Vithi Medical Centre Clinic,Clinic,no coordinates; dropped,,,,0.0,0.0
+Nyiemera Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Siita Save Life Health Centre III,Health Centre III,no coordinates; dropped,,,,0.0,0.0
+Sikwo Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+St. Francis Acumet Health Centre III,Health Centre III,no coordinates; dropped,,,,0.0,0.0
+St. Luke Kavule (Kavule) Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+St. Lwanga Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+St. Richard Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Suubi Health Centre III,Health Centre III,no coordinates; dropped,,,,0.0,0.0
+Tigrim Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Afoji Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Ating Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Gracious Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Kalemungole Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Kosiroi Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Lanyirinyiri Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Layita Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Lera-Obaro Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Lomirinyangae Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+St. Janani Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Taim Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Timagi Medical Centre Health Centre III,Health Centre III,no coordinates; dropped,,,,0.0,0.0
+Usake Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Bugahura Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Buhangamuyangha Health Centre III,Health Centre III,no coordinates; dropped,,,,0.0,0.0
+Buredo Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Hunter Foundation Health Centre III,Health Centre III,no coordinates; dropped,,,,0.0,0.0
+Ibanda Karangara Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Juru Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Kagati Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Migina Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Mpanga Estate Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Mukondo Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Ntugu Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Nyakadoti Health Centre III,Health Centre III,no coordinates; dropped,,,,0.0,0.0
+Nyakasharara Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Paraa Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Rwamijuka Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Rwantaaha Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Rwengyejera Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+St. Claret Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+St. Monica Bilongo Health Centre III,Health Centre III,no coordinates; dropped,,,,0.0,0.0
+St. Peters Kanywamaizi Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+St. Thereza Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0
+Tuhwerane Health Centre II,Health Centre II,no coordinates; dropped,,,,0.0,0.0

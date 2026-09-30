@@ -25,3 +25,9 @@ for s in f m; do for a in 0 1 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80; do
 done; done; echo "agesex ok"
 # Meta Relative Wealth Index (2.4 km tiles), for breakdowns by relative wealth.
 get https://data.humdata.org/dataset/76f2a2ea-ba50-40f5-b79c-db95d668b843/resource/ae47ca7e-de1b-40f5-8b30-81ba30bed89b/download/uga_relative_wealth_index.csv uga_relative_wealth_index.csv
+
+# UBOS 2016 parish boundaries, used by facilities.py to check facility coordinates against
+# the places facilities are named after. The UBOS GeoNode needs an access token, so this
+# one is downloaded by hand: layer geonode:uganda_parishes_cleaned_attached as SHAPE-ZIP from
+# http://ubos.geo-solutions.it/geoserver/wfs, unpacked into data/uga_parishes/.
+[ -s uga_parishes/uganda_parishes_cleaned_attached.shp ] && echo "uga_parishes ok" || echo "uga_parishes missing (manual download; facility checks will be skipped)"

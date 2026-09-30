@@ -11,7 +11,7 @@
 **Main findings.**
 - 13% of Ugandans are more than an hour from a hospital by road in dry weather; in April, the peak of the long rains, 18% (about 2.3 million more people); on a fully wet day, 31%.
 - The burden is unequal: 23% of the poorest fifth are more than an hour from a hospital in dry weather and 32% in April; the richest fifth stay near 1%.
-- On foot, 44% of women aged 15–49 are more than two hours from emergency obstetric care in April. Walking, not road distance, is the barrier.
+- On foot, 43% of women aged 15–49 are more than two hours from emergency obstetric care in April. Walking, not road distance, is the barrier.
 - A handful of river crossings matter a great deal: a bridge at the top-ranked ford (Riwo, Bukwo) would bring about 7,000 people within an hour of emergency obstetric care on wet days.
 - Modelled access tracks the share of women who cite distance as a barrier to care (Spearman ρ ≈ 0.8 across 15 regions). The seasonal cycle, not the long-term rainfall trend, is what matters.
 
@@ -49,7 +49,7 @@ Install the packages in `requirements.txt` (Python 3.9), then run each script fr
 
 Shared modules:
 - `model.py`: the travel-time model and all its assumptions, in `PARAMS`.
-- `facilities.py`: destinations and run settings.
+- `facilities.py`: destinations, facility-coordinate checks and run settings.
 - `zonal.py`: sub-county statistics.
 - `cartography.py`: map furniture.
 - `rain.py`: the wet-day thresholds and the CHIRPS loader.
@@ -72,7 +72,13 @@ The model uses a friction surface on WorldPop's 1 km grid.
 - *Walking:* 5 km/h, slower on wet earth.
 
 **Destinations.**
-- *Hospitals, HC IVs and other facilities:* from the Ministry of Health public and not-for-profit list, which records levels. 22 hospitals and HC IVs with clearly wrong coordinates were moved to their OSM location; see `data/facility_relocations.csv`.
+- *Hospitals, HC IVs and other facilities:* from the Ministry of Health public and not-for-profit list, which records levels but only the region, not the district or parish. Coordinates are corrected in two steps; every move is logged in `data/facility_relocations.csv`:
+  - Hospitals and HC IVs more than 10 km from the only OSM facility with the same name are moved to it (19 facilities).
+  - The UBOS 2016 parish boundaries then check each facility against the parish, sub-county or district it is named after:
+    - An OSM move is rejected if the facility was already at a place of its name (Namwendwa HC IV, Kyabugimbi HC IV, Matany Hospital).
+    - A hospital or HC IV far from every place of its name and outside its recorded region is moved to the sub-county of its name (Ntusi HC IV, 179 km).
+    - Of the 115 facilities with no coordinates (recorded as 0, 0), 29 are placed in the parish or sub-county of their name; the other 86 are dropped.
+  - About 250 facilities, mostly HC IIs and IIIs, are far from every place of their name but are not moved, because parish names repeat across the country and some places are missing from the 2016 boundaries. They are listed with the dropped facilities and rejected moves in `outputs/facility_location_review.csv`.
 - *Secondary schools, markets and towns:* from OSM.
 
 ## Results (2006–2025 rainfall, official facilities)
@@ -80,25 +86,25 @@ The model uses a friction surface on WorldPop's 1 km grid.
 **Seasonal access**
 - **Hospitals, by road:** 13.1% of people are more than 1 hour from a hospital in dry weather. That rises to 18.1% in April, the worst month in 79 of 135 districts (about 2.3 million more people), and to 30.5% on a fully wet day.
 - **On foot:**
-  - 16.8% are more than 1 hour from any facility in dry weather, rising to 20.2% in April.
-  - 41% of women aged 15–49 are more than 2 hours from emergency obstetric care (HC IV or hospital) in dry weather, rising to 44% in April.
-  - By road, the same figure for women is 0.9% rising to 1.3%. Walking, not distance by road, is the barrier.
+  - 16.5% are more than 1 hour from any facility in dry weather, rising to 19.9% in April.
+  - 41% of women aged 15–49 are more than 2 hours from emergency obstetric care (HC IV or hospital) in dry weather, rising to 43% in April.
+  - By road, the same figure for women is 0.9% rising to 1.2%. Walking, not distance by road, is the barrier.
 - **Other destinations, by road, dry weather to April:**
   - more than 1 hour from a market: 17.0% to 21.4%
   - from a town: 6.2% to 9.4%
   - from a secondary school: 2.4% to 2.9% (27% to 30% on foot)
 
 **Who is affected**
-- **Wealth:** by road, 23% of the poorest fifth are more than 1 hour from a hospital in dry weather and 32% in April; for the richest fifth, 0.8% and 1.0%. On foot to any facility, the poorest fifth go from 31% to 37%; the richest fifth are at 1%.
+- **Wealth:** by road, 23% of the poorest fifth are more than 1 hour from a hospital in dry weather and 32% in April; for the richest fifth, 0.8% and 1.0%. On foot to any facility, the poorest fifth go from 30% to 36%; the richest fifth are at 1%.
 - **Refugee-site sub-counties:** 22% of people are more than 1 hour from a hospital in dry weather and 33% in April, against 13% and 18% elsewhere. This covers only the 14 sub-counties with an OSM refugee site, mostly in West Nile.
 - **Sub-counties:** the largest April jumps are Malongo (Mayuge), 59% to 93%; Kagulu (Buyende), 33% to 66%; Butoloogo (Mubende), 26% to 84%; and Kyangwali (Kikuube, refugee settlement), 54% to 77%.
 - **Hospital catchments:** the rains push most people beyond 1 hour in the catchments of Mubende RRH (155,000 people in April), Lira RRH (141,000), Kamuli (127,000), Kagadi (118,000) and Pallisa (108,000).
 
-**Crossings to bridge.** 72 distinct crossings were ranked. Bridging the top one, on a secondary road in Riwo (Bukwo), would bring about 7,000 people within 1 hour of emergency obstetric care on wet days, including 1,500 women of reproductive age. The next are Karita (Amudat) and Panyangara (Kotido).
+**Crossings to bridge.** 72 distinct crossings were ranked. Bridging the top one, on a secondary road in Riwo (Bukwo), would bring about 7,000 people within 1 hour of emergency obstetric care on wet days, including 1,500 women of reproductive age. The next are Karita (Amudat), a footpath ford at Kilembe (Kasese), and Panyangara (Kotido).
 
 **Check against DHS 2016 (15 regions).** Modelled access matches the share of women who cite distance as a barrier to care:
-- Spearman ρ = 0.81–0.85 (p < 0.001).
-- ρ = 0.55–0.60 after controlling for wealth (p = 0.02–0.035).
+- Spearman ρ = 0.81–0.83 (p < 0.001).
+- ρ = 0.52–0.59 after controlling for wealth (p = 0.02–0.05).
 
 Modelled access does **not** predict facility births or vaccination at regional level; Karamoja, for example, has poor access but 80% facility births. A seasonal test, whether facility births dip in the months access worsens, needs DHS birth-level microdata. These require a free registration at dhsprogram.com.
 
@@ -134,7 +140,7 @@ Modelled access does **not** predict facility births or vaccination at regional 
 ## Caveats
 
 - **OSM completeness varies.** Most roads have no `surface` tag, so class-based defaults decide wet-day speeds. Treating untagged secondary and tertiary roads as earth is the variant that most changes district rankings (Spearman 0.90).
-- **The facility list dates from about 2018** and excludes private for-profit facilities. The relocations need a manual check.
+- **The facility list dates from about 2018** and excludes private for-profit facilities. The relocations and `outputs/facility_location_review.csv` need a manual check.
 - **Refugee sites in OSM are incomplete.** Settlement boundaries from UNHCR would allow a full breakdown.
 - **Ferries are not modelled.** Kalangala and Buvuma have population with no road link, counted as beyond every threshold.
 - **Northern rainfall is uncertain.** CHIRPS and TAMSAT disagree on long-term change there (see the construction-delay paper). The seasonal cycle used here is less affected than the trend.

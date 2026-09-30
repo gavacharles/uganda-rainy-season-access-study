@@ -79,27 +79,137 @@ def load_osm():
     return health
 
 
+# UBOS 2016 parish boundaries, used to check facility coordinates against the places
+# facilities are named after. Downloaded by hand from the UBOS GeoNode (WFS layer
+# geonode:uganda_parishes_cleaned_attached); the checks are skipped if it is missing.
+PARISHES = os.path.join(DATA, "uga_parishes", "uganda_parishes_cleaned_attached.shp")
+NAME_KM = 2.0          # a facility this close to a unit bearing its name is where its name says
+SAME_PLACE_KM = 5.0    # units bearing one name this close together are one place
+# The facility list records only the region; these are its UBOS sub-regions.
+REGIONS = {"Central": {"GREATER KAMPALA", "CENTRAL I", "CENTRAL II"},
+           "Eastern": {"BUSOGA", "BUKEDI", "BUGISU_SEBEI", "TESO"},
+           "Northern": {"WEST NILE", "LANGO", "ACHOLI", "KARAMOJA"},
+           "Western": {"ANKOLE", "KIGEZI", "BUNYORO", "TORO"}}
+# Words of a unit name that do not say which place it is, e.g. 'KISENYI II', 'KAZO TOWN COUNCIL'.
+ADMIN_WORDS = {"ward", "town", "council", "tc", "division", "cell", "municipality", "municipal",
+               "central", "north", "south", "east", "west", "upper", "lower", "rural", "urban",
+               "i", "ii", "iii", "iv", "v"}
+
+
+def admin_key(name):
+    words = re.sub(r"[^a-z0-9 ]", " ", str(name).lower()).split()
+    return frozenset(w for w in words if w not in ADMIN_WORDS)
+
+
+def load_named_units():
+    """Parishes, sub-counties and districts (EPSG:32636) keyed by the words of their
+    name, or None if the parish file is missing."""
+    if not os.path.exists(PARISHES):
+        print(f"warning: {PARISHES} not found; facility coordinates not checked against place names")
+        return None
+    par = gpd.read_file(PARISHES).to_crs(32636)
+    par["geometry"] = par.buffer(0)
+    parts = []
+    for level, col, by in (("parish", "p", None), ("sub-county", "s", ["F15Regions", "d", "s"]),
+                           ("district", "d", ["F15Regions", "d"])):
+        g = par if by is None else par.dissolve(by=by).reset_index()
+        parts.append(gpd.GeoDataFrame(
+            dict(region=g.F15Regions.values, level=level, unit=g[col].values,
+                 district=g.d.values, key=g[col].map(admin_key).values),
+            geometry=g.geometry.values, crs=par.crs))
+    units = pd.concat(parts, ignore_index=True)
+    return units[units.key.map(len) > 0]
+
+
+def one_place(units):
+    """Representative point (EPSG:32636) of units that are all one place, else None."""
+    if units.empty:
+        return None
+    pts = units.geometry.representative_point()
+    if pts.apply(lambda g: pts.distance(g).max()).max() / 1000 > SAME_PLACE_KM:
+        return None
+    return pts.iloc[0]
+
+
 def load_official():
     """Official list, with hospitals and HC IVs moved to their OSM location where the
     official coordinates look wrong: exactly one OSM facility has the same distinctive
     name and does not state a different level (names shared by several facilities are
     narrowed to those stating the same level, and points within DUPLICATE_KM of each
     other count as one), the name is not made only of COMMON words, the OSM point is
-    more than RELOCATE_KM away, and it is inside Uganda. Each move is logged in data/facility_relocations.csv."""
+    more than RELOCATE_KM away, and it is inside Uganda.
+
+    The UBOS parish boundaries then check these against the place each facility is named
+    after (a parish, sub-county or district of that name in its region):
+      - an OSM move is dropped if it takes a facility away from a place of its name;
+      - a hospital or HC IV more than RELOCATE_KM from every place of its name, and
+        outside its recorded region, is moved to the sub-county of that name, if the
+        name means one sub-county (inside its region, the place may simply be missing
+        from the 2016 boundaries, e.g. Kinoni in Rwampara);
+      - a facility without coordinates is placed in the parish (else sub-county) of its
+        name, if the name means one place, and dropped otherwise;
+      - other facilities more than RELOCATE_KM from every place of their name are kept
+        but listed for review, since parish names repeat across the country.
+    Moves are logged in data/facility_relocations.csv; dropped facilities, rejected OSM
+    moves and facilities to review in outputs/facility_location_review.csv."""
     x = pd.read_excel(os.path.join(DATA, "ssa_health_facilities.xlsx"))
     x = x[x.Country == "Uganda"]
     off = gpd.GeoDataFrame(
         dict(name=x.Facility_n.values, facility_type=x.Facility_t.values,
-             level=x.Facility_t.map(OFFICIAL_LEVEL).fillna("other").values),
+             level=x.Facility_t.map(OFFICIAL_LEVEL).fillna("other").values,
+             region=x.Admin1.values),
         geometry=gpd.points_from_xy(x.Long, x.Lat), crs="EPSG:4326")
+    no_coords = ((x.Lat.fillna(0) == 0) & (x.Long.fillna(0) == 0)).values
+    units = load_named_units()
+    by_key = units.groupby("key") if units is not None else None
+
+    def named(name, region):
+        """Units in the region bearing the facility's distinctive name."""
+        core = core_name(name)
+        if units is None or not core or core <= COMMON or core not in by_key.groups:
+            return None
+        u = by_key.get_group(core)
+        u = u[u.region.isin(REGIONS.get(region, ()))]
+        return u if len(u) else None
+
+    def near(point_m, u):
+        return u.geometry.distance(point_m).min() / 1000 <= NAME_KM
+
+    in_region = {}
+    if units is not None:
+        admin1 = {sub: reg for reg, subs in REGIONS.items() for sub in subs}
+        districts = units[units.level == "district"].rename(columns={"region": "sub_region"})
+        hit = gpd.sjoin(off.to_crs(32636)[~no_coords], districts[["sub_region", "geometry"]],
+                        predicate="within")
+        in_region = {i: admin1.get(sub) == off.region[i]
+                     for i, sub in hit.groupby(level=0).sub_region.first().items()}
+
     osm = load_osm()
     osm = osm[osm.name.notna()].assign(core=lambda d: d.name.map(core_name),
                                        stated=lambda d: d.name.map(stated_level))
     by_core = osm.groupby("core")
     uganda = gpd.read_file(os.path.join(DATA, "uga_districts.geojson")).union_all()
     off_m, osm_m = off.to_crs(32636), osm.to_crs(32636)
-    moves = []
-    for i, r in off[off.level != "other"].iterrows():
+    moves, review, moved = [], [], {}
+    to_lonlat = lambda g: gpd.GeoSeries([g], crs=32636).to_crs(4326).iloc[0]
+
+    def move(i, target, method, km, osm_name=""):
+        r = off.loc[i]
+        moved[i] = method
+        moves.append(dict(name=r["name"], level=r.level, method=method, km_moved=km,
+                          osm_name=osm_name, from_lon=r.geometry.x, from_lat=r.geometry.y,
+                          to_lon=target.x, to_lat=target.y))
+        off.loc[i, "geometry"] = target
+
+    def flag(i, issue, km=None, u=None):
+        r = off.loc[i]
+        review.append(dict(name=r["name"], facility_type=r.facility_type, issue=issue,
+                           km_from_named_place=km,
+                           named_place="" if u is None else f"{u.unit.iloc[0]} ({u.level.iloc[0]})",
+                           named_district="" if u is None else u.district.iloc[0],
+                           lon=r.geometry.x, lat=r.geometry.y))
+
+    for i, r in off[(off.level != "other") & ~no_coords].iterrows():
         core = core_name(r["name"])
         if not core or core <= COMMON or core not in by_core.groups:
             continue
@@ -117,12 +227,41 @@ def load_official():
         km = off_m.geometry[i].distance(osm_m.geometry[j]) / 1000
         target = cand.geometry.iloc[0]
         if km > RELOCATE_KM and uganda.contains(target):
-            moves.append(dict(name=r["name"], level=r.level, km_moved=round(km, 1),
-                              osm_name=cand.name.iloc[0], from_lon=r.geometry.x,
-                              from_lat=r.geometry.y, to_lon=target.x, to_lat=target.y))
-            off.loc[i, "geometry"] = target
+            u = named(r["name"], r.region)
+            if u is not None and near(off_m.geometry[i], u) and not near(osm_m.geometry[j], u):
+                flag(i, f"OSM move of {km:.0f} km rejected: already at a place of its name", 0.0, u)
+                continue
+            move(i, target, "OSM name", round(km, 1), cand.name.iloc[0])
+            off_m.loc[i, "geometry"] = osm_m.geometry[j]
+
+    for i, r in off.iterrows():
+        u = named(r["name"], r.region)
+        if u is None or i in moved:
+            continue
+        if no_coords[i]:
+            for level in ("parish", "sub-county"):
+                target = one_place(u[u.level == level])
+                if target is not None:
+                    move(i, to_lonlat(target), f"{level} name (no coordinates)", None)
+                    break
+            continue
+        km = round(u.geometry.distance(off_m.geometry[i]).min() / 1000, 1)
+        if km <= RELOCATE_KM:
+            continue
+        outside = not in_region.get(i, False)
+        target = one_place(u[u.level == "sub-county"]) if r.level != "other" and outside else None
+        if target is not None:
+            move(i, to_lonlat(target), "sub-county name", round(target.distance(off_m.geometry[i]) / 1000, 1))
+            continue
+        flag(i, "far from every place of its name" + ("; outside its recorded region" if outside else ""), km, u)
+
+    placed = off.index.isin(list(moved)) & no_coords
+    for i in off.index[no_coords & ~placed]:
+        flag(i, "no coordinates; dropped")
     pd.DataFrame(moves).to_csv(os.path.join(DATA, "facility_relocations.csv"), index=False)
-    return off
+    pd.DataFrame(review).to_csv(os.path.join(DATA, "..", "outputs", "facility_location_review.csv"),
+                                index=False)
+    return off[~no_coords | placed].drop(columns="region")
 
 
 def load_health(source="official"):

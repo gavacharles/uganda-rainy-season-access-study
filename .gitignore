@@ -4,3 +4,14 @@ outputs/**/*.tif
 site/
 __pycache__/
 .DS_Store
+
+# Paper drafts and write-ups are kept private (moved 2026-11-20)
+/posts/preview.html
+/presentation/*.pptx
+/posts/**/*.md
+/posts/**/*.txt
+/posts/**/*.docx
+/posts/**/*.doc
+/posts/**/*.pdf
+/posts/**/*.pptx
+/posts/**/*.tex
